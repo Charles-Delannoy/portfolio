@@ -30,7 +30,7 @@ const ContentWrapper = styled.div`
 
 const ImgContent = styled.div`
   height: calc(100vh - 150px);
-  background-image: url(/devimg.jpg);
+  background-image: url(${process.env.PUBLIC_URL}/devimg.jpg);
   background-size: cover;
   background-position-y: 70%;
   min-width: 45vw;

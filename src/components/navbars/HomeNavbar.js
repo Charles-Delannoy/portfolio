@@ -54,6 +54,7 @@ const HomeNav = styled.div`
 `;
 
 const HomeNavbar = () => {
+  console.log(window.location.origin);
   return (
     <div>
       <HeadNav>
@@ -63,7 +64,7 @@ const HomeNavbar = () => {
         </NavUl>
       </HeadNav>
       <HomeNav>
-        <img src={window.location.origin + '/plain-logo.png'} alt='logo'/>
+        <img src={process.env.PUBLIC_URL + '/plain-logo.png'} alt='logo'/>
         <NavUl>
           <li>À propos</li>
           <li>Mes projets</li>

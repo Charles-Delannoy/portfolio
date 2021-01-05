@@ -29,7 +29,7 @@ const Button = styled.button`
 
 const ContactBtn = () => {
   return (
-    <Button><img src={window.location.origin + '/bullet.svg'} alt='arrow'/> <p>Contactez moi</p></Button>
+    <Button><img src={process.env.PUBLIC_URL + '/bullet.svg'} alt='arrow'/> <p>Contactez moi</p></Button>
   );
 };
 
