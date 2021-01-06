@@ -15,7 +15,7 @@ const ContentWrapper = styled.div`
   width: 100%;
   height: calc(100vh - 150px);
   display: flex;
-  p {
+  .text {
     font-size: 40px;
     line-height: 65px;
     padding-left: 40px;
@@ -49,7 +49,7 @@ const Home = () => {
         <ContentWrapper>
           <ImgContent/>
           <FlexDescription>
-            <p>
+            <p className='text'>
               Bonjour,<br/>
               Je suis <strong>Charles DELANNOY, Développeur full-stack </strong>
               et ancien consultant en Organisation et Management ce qui me permet d'avoir

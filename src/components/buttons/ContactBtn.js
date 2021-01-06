@@ -10,10 +10,11 @@ const Button = styled.button`
   color: #fff;
   background-color: #b7bdcc;
   border: none;
-  padding-right: 20px;
+  padding: 25px 20px 25px 10px;
   border-radius: 10px 0px 0px 10px;
   display: flex;
   align-items: center;
+  width: 395px;
   align-self: flex-end;
   img {
     transform: scaleX(-1);
@@ -22,7 +23,6 @@ const Button = styled.button`
   }
   p {
     margin: 0;
-    padding: 0;
   }
 `;
 
