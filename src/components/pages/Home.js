@@ -18,8 +18,7 @@ const ContentWrapper = styled.div`
   p {
     font-size: 40px;
     line-height: 65px;
-    padding: 40px;
-    margin-right: 90px;
+    padding-left: 40px;
     font-family: 'Montserrat';
     align-self: center;
     strong {
@@ -36,6 +35,12 @@ const ImgContent = styled.div`
   min-width: 45vw;
 `;
 
+const FlexDescription = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+`;
+
 const Home = () => {
   return (
     <Fragment>
@@ -43,14 +48,16 @@ const Home = () => {
       <Wrapper>
         <ContentWrapper>
           <ImgContent/>
-          <p>
-            Bonjour,<br/>
-            Je suis <strong>Charles DELANNOY, Développeur full-stack </strong>
-            et ancien consultant en Organisation et Management ce qui me permet d'avoir
-            une <strong>approche orientée produit</strong>.
-          </p>
+          <FlexDescription>
+            <p>
+              Bonjour,<br/>
+              Je suis <strong>Charles DELANNOY, Développeur full-stack </strong>
+              et ancien consultant en Organisation et Management ce qui me permet d'avoir
+              une <strong>approche orientée produit</strong>.
+            </p>
+            <ContactBtn />
+          </FlexDescription>
         </ContentWrapper>
-        <ContactBtn />
       </Wrapper>
     </Fragment>
   );
