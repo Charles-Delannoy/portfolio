@@ -31,7 +31,8 @@ const HeadNav = styled.div`
 const HomeNav = styled.div`
   height: 100px;
   width: 100vw;
-  background-color: #f3e4de;
+  border-top: thin solid #c5c2c2;
+  border-bottom: thin solid #c5c2c2;
   position: relative;
   font-size: 30px;
   font-weight: 300;
@@ -48,7 +49,7 @@ const HomeNav = styled.div`
   img {
     margin-left: 5vw;
     height: 150px;
-    border: 2px solid #fff;
+    border: 1px solid #fff;
     border-radius: 50%;
   }
 `;
@@ -64,7 +65,7 @@ const HomeNavbar = () => {
         </NavUl>
       </HeadNav>
       <HomeNav>
-        <img src={process.env.PUBLIC_URL + '/plain-logo.png'} alt='logo'/>
+        <img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/>
         <NavUl>
           <li>À propos</li>
           <li>Mes projets</li>
