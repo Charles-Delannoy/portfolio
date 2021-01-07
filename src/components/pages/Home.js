@@ -4,6 +4,8 @@ import ContactBtn from '../buttons/ContactBtn';
 import HomeNavbar from '../navbars/HomeNavbar';
 // External librairies
 import styled from 'styled-components';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons'
 
 const Wrapper = styled.div`
   min-height: calc(100vh - 150px);
@@ -43,7 +45,24 @@ const FlexDescription = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+  position: relative;
 `;
+
+const BottomArrow = styled.div`
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  img {
+    transform: rotate(-90deg);
+    width: 15px;
+    cursor: pointer;
+  }
+`;
+
+const scrollDown = () => {
+  window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+}
 
 const Home = () => {
   return (
@@ -57,6 +76,9 @@ const Home = () => {
               <strong>Charles DELANNOY</strong> <br/>Développeur full-stack
             </p>
             <ContactBtn />
+            <BottomArrow>
+              <img src={process.env.PUBLIC_URL + '/arrow.png'} alt='arrow' onClick={scrollDown}/>
+            </BottomArrow>
           </FlexDescription>
         </ContentWrapper>
       </Wrapper>

@@ -1,9 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 import Home from './pages/Home';
+import Apropos from './pages/Apropos';
 
 const App = () => {
   return (
-    <Home />
+    <Fragment>
+      <Home />
+      <Apropos />
+    </Fragment>
   );
 };
 
