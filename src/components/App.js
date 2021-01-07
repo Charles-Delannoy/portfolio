@@ -6,22 +6,22 @@ const App = () => {
 
   const [language, setLanguage] = useState('fr');
 
-  useEffect(() => {
-    if (`${window.location.origin}/` === window.location.href ) {
-      window.location.href = `${window.location.href}fr`;
-    } else if (!(window.location.href.split('/')[3] === 'fr' || window.location.href.split('/')[3] === 'en')) {
-      const pathArray = window.location.href.split('/');
-      pathArray[3] = 'fr';
-      pathArray.length = 4;
-      window.location.href = pathArray.join('/');
-    } else if (window.location.href.split('/').length > 4) {
-      const pathArray = window.location.href.split('/');
-      pathArray.length = 4;
-      window.location.href = pathArray.join('/');
-    }
+  // useEffect(() => {
+  //   if (`${window.location.origin}/` === window.location.href ) {
+  //     window.location.href = `${window.location.href}fr`;
+  //   } else if (!(window.location.href.split('/')[3] === 'fr' || window.location.href.split('/')[3] === 'en')) {
+  //     const pathArray = window.location.href.split('/');
+  //     pathArray[3] = 'fr';
+  //     pathArray.length = 4;
+  //     window.location.href = pathArray.join('/');
+  //   } else if (window.location.href.split('/').length > 4) {
+  //     const pathArray = window.location.href.split('/');
+  //     pathArray.length = 4;
+  //     window.location.href = pathArray.join('/');
+  //   }
 
-    setLanguage(window.location.href.split('/')[3])
-  }, [])
+  //   setLanguage(window.location.href.split('/')[3])
+  // }, [])
 
   const onLanguageClick = (e) => {
       // e.preventDefault();

@@ -52,10 +52,10 @@ const Language = ({ language, onLanguageClick }) => {
     <HeadNav>
       <NavUl>
         <li>
-          <Link onClick={onLanguageClick} to={frPath} className={language === 'fr' ? 'activ-language' : ''} >FR</Link>
+          <a onClick={onLanguageClick}  className={language === 'fr' ? 'activ-language' : ''} >FR</a>
         </li>
         <li>
-          <Link onClick={onLanguageClick} to={enPath} className={language === 'en' ? 'activ-language' : ''} >EN</Link>
+          <a onClick={onLanguageClick}  className={language === 'en' ? 'activ-language' : ''} >EN</a>
         </li>
       </NavUl>
     </HeadNav>
