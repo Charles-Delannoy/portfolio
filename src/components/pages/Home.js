@@ -12,17 +12,20 @@ const Wrapper = styled.div`
 `;
 
 const ContentWrapper = styled.div`
-  width: 100%;
+  width: 100vw;
   height: calc(100vh - 150px);
   display: flex;
   .text {
     font-size: 40px;
     line-height: 65px;
-    padding-left: 40px;
+    font-weight: 100;
+    padding: 0 40px;
     font-family: 'Montserrat';
     align-self: center;
+    text-align: center;
+    margin: 120px 30px 30px 30px;
     strong {
-      font-weight: 600;
+      font-weight: 400;
     }
   }
 `;
@@ -32,10 +35,11 @@ const ImgContent = styled.div`
   background-image: url(${process.env.PUBLIC_URL}/devimg.jpg);
   background-size: cover;
   background-position-y: 70%;
-  min-width: 45vw;
+  width: 45vw;
 `;
 
 const FlexDescription = styled.div`
+  width: 55vw;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -50,10 +54,7 @@ const Home = () => {
           <ImgContent/>
           <FlexDescription>
             <p className='text'>
-              Bonjour,<br/>
-              Je suis <strong>Charles DELANNOY, Développeur full-stack </strong>
-              et ancien consultant en Organisation et Management ce qui me permet d'avoir
-              une <strong>approche orientée produit</strong>.
+              <strong>Charles DELANNOY</strong> <br/>Développeur full-stack
             </p>
             <ContactBtn />
           </FlexDescription>

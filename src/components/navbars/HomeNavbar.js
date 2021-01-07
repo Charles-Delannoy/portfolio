@@ -42,11 +42,11 @@ const HomeNav = styled.div`
   ul {
     margin-right: 6vw;
     li {
-      padding: 0 30px;
+      padding: 0 2vw;
     }
   }
   img {
-    margin-left: 6vw;
+    margin-left: 5vw;
     height: 150px;
     border: 2px solid #fff;
     border-radius: 50%;
