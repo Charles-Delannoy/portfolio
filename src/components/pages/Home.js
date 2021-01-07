@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 // My components
 import ContactBtn from '../buttons/ContactBtn';
 import HomeNavbar from '../navbars/HomeNavbar';
@@ -65,8 +65,29 @@ const scrollDown = () => {
 }
 
 const Home = () => {
+
+  const [fullHeight, setFullHeight] = useState(1000);
+  const [leftPos, setLeftPos] = useState(0);
+
+  useEffect(() => {
+    const newHeight = document.getElementById('global-div').clientHeight;
+    setFullHeight(newHeight);
+  }, [])
+
+  document.onscroll = function(){
+    let left = window.scrollY + 3;
+    if (left <= 270) {
+      setLeftPos(left);
+    } else {
+      setLeftPos(270);
+    }
+  };
+
   return (
     <Fragment>
+      <div style={{position: 'absolute', height: fullHeight, width: '100%', left: `${leftPos}px`}}>
+        <ContactBtn />
+      </div>
       <HomeNavbar />
       <Wrapper>
         <ContentWrapper>
@@ -75,7 +96,7 @@ const Home = () => {
             <p className='text'>
               <strong>Charles DELANNOY</strong> <br/>Développeur full-stack
             </p>
-            <ContactBtn />
+
             <BottomArrow>
               <img src={process.env.PUBLIC_URL + '/arrow.png'} alt='arrow' onClick={scrollDown}/>
             </BottomArrow>

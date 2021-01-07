@@ -1,13 +1,14 @@
 import React, { Fragment } from 'react';
 import Home from './pages/Home';
 import Apropos from './pages/Apropos';
+import ContactBtn from './buttons/ContactBtn';
 
 const App = () => {
   return (
-    <Fragment>
+    <div id='global-div'>
       <Home />
       <Apropos />
-    </Fragment>
+    </div>
   );
 };
 

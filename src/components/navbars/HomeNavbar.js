@@ -55,7 +55,7 @@ const HomeNav = styled.div`
 `;
 
 const HomeNavbar = () => {
-  console.log(window.location.origin);
+
   return (
     <div>
       <HeadNav>
