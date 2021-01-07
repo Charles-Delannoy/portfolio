@@ -1,11 +1,15 @@
 import React from 'react';
+import Items from './Items';
+import Language from './Language';
 import styled from 'styled-components';
 
 const NavUl = styled.ul`
   margin: 0 5px;
   list-style: none;
+  z-index: 1000;
   li {
     display:inline;
+    color: #5E6472;
   }
 `;
 
@@ -54,23 +58,20 @@ const HomeNav = styled.div`
   }
 `;
 
-const HomeNavbar = () => {
+const HomeNavbar = ({ language, onLanguageClick }) => {
+
+  const renderMenus = Items.map((item) => {
+    const label = language === 'fr' ? item.label : item.label_en;
+    return (<li>{label}</li>)
+  });
 
   return (
     <div>
-      <HeadNav>
-        <NavUl>
-          <li>FR</li>
-          <li>EN</li>
-        </NavUl>
-      </HeadNav>
+      <Language language={language} onLanguageClick={onLanguageClick}/>
       <HomeNav>
         <img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/>
         <NavUl>
-          <li>À propos</li>
-          <li>Mes projets</li>
-          <li>Mes formations</li>
-          <li>Mes outils</li>
+          {renderMenus}
         </NavUl>
       </HomeNav>
     </div>

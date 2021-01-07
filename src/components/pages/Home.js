@@ -18,6 +18,7 @@ const ContentWrapper = styled.div`
   height: calc(100vh - 150px);
   display: flex;
   .text {
+    color: #5E6472;
     font-size: 40px;
     line-height: 65px;
     font-weight: 100;
@@ -64,7 +65,7 @@ const scrollDown = () => {
   window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
 }
 
-const Home = () => {
+const Home = ({ language, onLanguageClick }) => {
 
   const [fullHeight, setFullHeight] = useState(1000);
   const [leftPos, setLeftPos] = useState(0);
@@ -83,18 +84,20 @@ const Home = () => {
     }
   };
 
+  const text = language === 'fr' ? 'Développeur full-stack' : 'Full-stack developper';
+
   return (
     <Fragment>
       <div style={{position: 'absolute', height: fullHeight, width: '100%', left: `${leftPos}px`}}>
-        <ContactBtn />
+        <ContactBtn language={language}/>
       </div>
-      <HomeNavbar />
+      <HomeNavbar language={language} onLanguageClick={onLanguageClick}/>
       <Wrapper>
         <ContentWrapper>
           <ImgContent/>
           <FlexDescription>
             <p className='text'>
-              <strong>Charles DELANNOY</strong> <br/>Développeur full-stack
+              <strong>Charles DELANNOY</strong> <br/>{text}
             </p>
 
             <BottomArrow>
