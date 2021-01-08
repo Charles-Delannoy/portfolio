@@ -22,11 +22,22 @@ const HeadNav = styled.div`
   align-items: center;
   font-size: 24px;
   font-weight: 300;
+  .activ-language {
+    color: #6EB4D1;
+  }
   ul {
     li {
       padding: 0 10px;
       &:first-child {
         border-right: thin solid black;
+      }
+      a {
+        cursor: pointer;
+        text-decoration: none;
+        color: #5E6472;
+        &:hover {
+          color: #6EB4D1;
+        }
       }
     }
   }
@@ -60,14 +71,18 @@ const HomeNav = styled.div`
 
 const HomeNavbar = ({ language, onLanguageClick }) => {
 
-  const renderMenus = Items.map((item) => {
+  const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li>{label}</li>)
+    return (<li key={index}>{label}</li>)
   });
 
   return (
     <div>
-      <Language language={language} onLanguageClick={onLanguageClick}/>
+      <HeadNav>
+        <NavUl>
+          <Language language={language} onLanguageClick={onLanguageClick}/>
+        </NavUl>
+      </HeadNav>
       <HomeNav>
         <img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/>
         <NavUl>
