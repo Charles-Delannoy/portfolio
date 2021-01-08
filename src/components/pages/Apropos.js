@@ -59,9 +59,10 @@ const Content = styled.div`
       font-size: 3vw;
     `};
     ${mediaQueries('phone')`
-      font-size: 4vw;
-      line-height: 6vw;
+      font-size: 4.8vw;
+      line-height: 6.7vw;
       margin: 0;
+      color: black;
     `};
   }
   strong {
@@ -102,6 +103,9 @@ const TextWrapper = styled.div`
     border-top: thin solid #dce4e8;
     margin: 0 7vw;
     margin-bottom: 40px;
+  `};
+  ${mediaQueries('phone')`
+    margin-bottom: 0;
   `};
 `;
 
