@@ -1,4 +1,6 @@
 import React, { useState, useEffect, Fragment } from 'react';
+// Media Queries
+import { mediaQueries } from "../mediaQueries/MediaQueries"
 // My components
 import ContactBtn from '../buttons/ContactBtn';
 import HomeNavbar from '../navbars/HomeNavbar';
@@ -18,7 +20,6 @@ const ContentWrapper = styled.div`
   height: calc(100vh - 150px);
   display: flex;
   .text {
-    color: #5E6472;
     font-size: 40px;
     line-height: 65px;
     font-weight: 100;
@@ -27,10 +28,28 @@ const ContentWrapper = styled.div`
     align-self: center;
     text-align: center;
     margin: 120px 30px 30px 30px;
+    color: #89c1da;
+    ${mediaQueries('phone')`
+      margin-top: auto;
+      font-size: 30px;
+      line-height: 45px;
+      padding: 0;
+      margin: 10vh 0px 16vh 0px;
+    `};
     strong {
       font-weight: 400;
+      background-image: linear-gradient(120deg,#edf2f4 0%,#edf2f4 0%);
+      background-repeat: no-repeat;
+      background-size: 100% 35%;
+      background-position-x: 100%;
+      background-position-y: 83%;
+      padding: 10px;
+      color: #5E6472;
     }
   }
+  ${mediaQueries('phone')`
+    flex-direction: column;
+  `};
 `;
 
 const ImgContent = styled.div`
@@ -39,6 +58,13 @@ const ImgContent = styled.div`
   background-size: cover;
   background-position-y: 70%;
   width: 45vw;
+  ${mediaQueries('tab')`
+    background-position-x: 40%;
+  `};
+  ${mediaQueries('phone')`
+    width: 100vw;
+    background-position-y: 90%;
+  `};
 `;
 
 const FlexDescription = styled.div`
@@ -47,6 +73,9 @@ const FlexDescription = styled.div`
   flex-direction: column;
   justify-content: center;
   position: relative;
+  ${mediaQueries('phone')`
+    width: 100vw;
+  `};
 `;
 
 const BottomArrow = styled.div`
@@ -62,13 +91,13 @@ const BottomArrow = styled.div`
 `;
 
 const scrollDown = () => {
-  window.scrollTo({ top: window.innerHeight, behavior: 'smooth' });
+  window.scrollTo({ top: window.innerHeight + 1, behavior: 'smooth' });
 }
 
 const Home = ({ language, onLanguageClick }) => {
 
   const [fullHeight, setFullHeight] = useState(1000);
-  const [leftPos, setLeftPos] = useState(0);
+  const [rightPos, setRightPos] = useState(0);
 
   useEffect(() => {
     const newHeight = document.getElementById('global-div').clientHeight;
@@ -76,11 +105,11 @@ const Home = ({ language, onLanguageClick }) => {
   }, [])
 
   document.onscroll = function(){
-    let left = window.scrollY + 3;
-    if (left <= 270) {
-      setLeftPos(left);
+    let right = (window.scrollY + 3);
+    if (right <= 270) {
+      setRightPos(right);
     } else {
-      setLeftPos(270);
+      setRightPos(270);
     }
   };
 
@@ -88,9 +117,7 @@ const Home = ({ language, onLanguageClick }) => {
 
   return (
     <Fragment>
-      <div style={{position: 'absolute', height: fullHeight, width: '100%', left: `${leftPos}px`}}>
-        <ContactBtn language={language}/>
-      </div>
+      <ContactBtn language={language} rightPos={rightPos}/>
       <HomeNavbar language={language} onLanguageClick={onLanguageClick}/>
       <Wrapper>
         <ContentWrapper>

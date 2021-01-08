@@ -1,4 +1,5 @@
 import React from 'react';
+import { mediaQueries } from "../mediaQueries/MediaQueries"
 import Items from './Items';
 import Language from './Language';
 import styled from 'styled-components';
@@ -9,7 +10,6 @@ const NavUl = styled.ul`
   z-index: 1000;
   li {
     display:inline;
-    color: #5E6472;
   }
 `;
 
@@ -20,7 +20,7 @@ const HeadNav = styled.div`
   display: flex;
   justify-content: flex-end;
   align-items: center;
-  font-size: 24px;
+  font-size: 22px;
   font-weight: 300;
   .activ-language {
     color: #6EB4D1;
@@ -28,6 +28,8 @@ const HeadNav = styled.div`
   ul {
     li {
       padding: 0 10px;
+      font-family: 'Montserrat';
+      font-weight: 100;
       &:first-child {
         border-right: thin solid black;
       }
@@ -61,21 +63,40 @@ const HomeNav = styled.div`
       padding: 0 2vw;
       font-family: 'Montserrat';
       font-weight: 100;
+      a {
+        color: #5E6472;
+        text-decoration: none;
+        cursor: pointer;
+        &:hover {
+          color: #6EB4D1;
+        }
+      }
     }
+    ${mediaQueries('phone')`
+      display: none;
+    `};
   }
   img {
     margin-left: 5vw;
     height: 150px;
     border: 1px solid #fff;
     border-radius: 50%;
+    ${mediaQueries('tab')`
+      margin-left: 0;
+    `};
   }
+
+  ${mediaQueries('tab')`
+    font-size: 18px;
+    justify-content: center;
+  `};
 `;
 
 const HomeNavbar = ({ language, onLanguageClick }) => {
 
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li key={index}>{label}</li>)
+    return (<li key={index}><a>{label}</a></li>)
   });
 
   return (

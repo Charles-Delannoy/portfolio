@@ -1,82 +1,115 @@
 import React, { Fragment } from 'react';
+// Media Queries
+import { mediaQueries } from "../mediaQueries/MediaQueries"
 // My components
 // External librairies
 import styled from 'styled-components';
 
 const MainTitle = styled.h1`
-  padding-top: 50px;
   width: 300px;
-  height: 150px;
-  line-height: 150px;
+  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  height: 200px;
+  line-height: 200px;
   margin: 0 auto;
   font-family: 'Montserrat';
-  font-weight: 400;
+  font-weight: 300;
   font-size: 55px;
   text-align: center;
-  background-image: linear-gradient(120deg,#f3ece8 0%,#f3ece8 0%);
+  background-image: linear-gradient(120deg,#dce4e8 0%,#dce4e8 0%);
   background-repeat: no-repeat;
-  background-size: 250px 20px;
+  background-size: 250px 5px;
   background-position-x: 100%;
-  background-position-y: 72%;
+  background-position-y: 60%;
+  ${mediaQueries('phone')`
+    height: 100px;
+    line-height: 100px;
+    font-size: 35px;
+    background-size: 170px 5px;
+    background-position-x: 62%;
+    background-position-y: 63%;
+  `};
 `;
 
 const Wrapper = styled.div`
-  padding-top: 50px;
-  height: calc(100vh - 200px);
+  height: calc(100vh);
   position: relative;
   display: flex;
+  flex-direction: column;
+`;
+
+const Content = styled.div`
+  display: flex;
+  height: calc(100vh - 200px);
+  p {
+    align-self: center;
+    font-family: 'Montserrat';
+    font-size: 30px;
+    line-height: 45px;
+    margin-bottom: 150px;
+    margin-right: 10vw;
+    font-weight: 100;
+    border-left: thin solid #dce4e8;
+    padding-left: 30px;
+    ${mediaQueries('tab')`
+      align-self: center;
+      margin: 0 7vw;
+      padding-left: 0;
+      align-self: center;
+      border: none;
+      font-size: 3vw;
+    `};
+    ${mediaQueries('phone')`
+      font-size: 4vw;
+      line-height: 6vw;
+      margin: 0;
+    `};
+  }
+  strong {
+    font-weight: 100;
+    background-image: linear-gradient(120deg,#edf2f4 0%,#edf2f4 0%);
+    background-repeat: no-repeat;
+    background-size: 100% 35%;
+    background-position-x: 100%;
+    background-position-y: 83%;
+    padding: 10px;
+    color: #89c1da;
+    ${mediaQueries('phone')`
+      background-size: 100% 20%;
+      background-position-y: 68%;
+    `};
+  }
+  ${mediaQueries('tab')`
+    flex-direction: column-reverse;
+  `};
+  ${mediaQueries('phone')`
+    height: calc(100vh - 100px);
+  `};
 `;
 
 const ProfilePic = styled.img`
-  height: calc(80vh - 120px);
-  width: 400px;
-  object-fit: cover;
-  border-radius: 150px;
-  position: absolute;
-  left: 5vw;
+  width: 40%;
+  align-self: flex-end;
+  ${mediaQueries('tab')`
+    align-self: flex-start;
+  `};
 `;
 
-const FilterDiv = styled.div`
-  height: calc(80vh - 120px);
-  width: 400px;
-  border-radius: 150px;
-  position: absolute;
-  left: 5vw;
-  background-color: rgba(249, 232, 225, 0.4);
-  z-index: 999;
-`;
-
-const PrevDiv = styled.div`
-  height: calc(80vh - 170px);
-  border-bottom: 50px solid #f3ece8;
-  width: 18vw;
-`;
-
-const NextDiv = styled.div`
-  height: calc(80vh - 170px);
-  border-top: 50px solid #f3ece8;
-  width: 77vw;
+const TextWrapper = styled.div`
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  p {
-    margin-left: 280px;
-    padding-top: 50px;
-    font-size: 30px;
-    font-family: 'Montserrat';
-    font-weight: 300;
-    line-height: 45px;
-  }
-  strong {
-    font-weight: 600;
-  }
+  ${mediaQueries('tab')`
+    height: 100%;
+    border-bottom: thin solid #dce4e8;
+    border-top: thin solid #dce4e8;
+    margin: 0 7vw;
+    margin-bottom: 40px;
+  `};
 `;
 
 const Apropos = ({ language, onLanguageClick }) => {
 
   const text = language === 'fr' ?
     <p>
-      Issus d'une formation d'<strong>ingénieur généraliste</strong>, je suis devenu <strong>consultant en Organisation et Management</strong> en 2015. <br/>
+      Issu d'une formation d'<strong>ingénieur généraliste</strong>, je suis devenu <strong>consultant en Organisation et Management</strong> en 2015. <br/>
       Tout d'abord dans le secteur de la <strong>production énergétique</strong> je me suis par la suite dirigé vers <strong>l'automobile</strong> notamment dans le <strong>Marketing Digital</strong>.
       <br/>
       <br/>
@@ -91,17 +124,15 @@ const Apropos = ({ language, onLanguageClick }) => {
     </p>
 
   return (
-    <div style={{textAlign: 'center'}}>
+    <Wrapper>
       <MainTitle>À Propos</MainTitle>
-      <Wrapper>
-        <PrevDiv />
-        <FilterDiv />
-        <ProfilePic src={process.env.PUBLIC_URL + '/profile.jpeg'} alt='profile'/>
-        <NextDiv>
+      <Content>
+        <ProfilePic src={process.env.PUBLIC_URL + '/profile.png'} alt='logo'/>
+        <TextWrapper>
           {text}
-        </NextDiv>
-      </Wrapper>
-    </div>
+        </TextWrapper>
+      </Content>
+    </Wrapper>
   );
 };
 

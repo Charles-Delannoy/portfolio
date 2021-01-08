@@ -1,4 +1,5 @@
 import React from 'react';
+import { mediaQueries } from "../mediaQueries/MediaQueries"
 import Items from './Items';
 import Language from './Language';
 import styled from 'styled-components';
@@ -9,7 +10,7 @@ const NavUl = styled.ul`
   z-index: 1000;
   li {
     display:inline;
-    color: #5E6472;
+    color: #6EB4D1;
   }
 `;
 
@@ -24,18 +25,20 @@ const HomeNav = styled.div`
   transition-delay: 0.2s;
   background-color: #fff;
   border-bottom: thin solid #c5c2c2;
-  font-size: 30px;
   font-weight: 300;
   display: flex;
   justify-content: center;;
   align-items: center;
   z-index: 1000;
   ul {
-    margin-right: 6vw;
     li {
+      font-size: 30px;
       padding: 0 2vw;
       font-family: 'Montserrat';
       font-weight: 100;
+      ${mediaQueries('tab')`
+        font-size: 18px;
+      `};
     }
   }
   img {
@@ -56,7 +59,9 @@ const LanguageDiv = styled.div`
     color: #6EB4D1;
   }
   ul {
+    margin-right: 6vw;
     li {
+      font-size: 22px;
       padding: 0 10px;
       &:first-child {
         border-right: thin solid black;
@@ -77,6 +82,9 @@ const Wrapper = styled.div`
   .show-navbar {
     top: 0px;
   }
+  ${mediaQueries('phone')`
+    display: none;
+  `};
 `;
 
 const GlobalNavbar = ({ language, onLanguageClick }) => {
