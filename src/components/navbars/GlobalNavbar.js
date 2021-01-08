@@ -22,8 +22,8 @@ const HomeNav = styled.div`
   top: -120px;
   transition: top 0.3s;
   transition-delay: 0.2s;
-  background-color: #ebdfd9;
-
+  background-color: #fff;
+  border-bottom: thin solid #c5c2c2;
   font-size: 30px;
   font-weight: 300;
   display: flex;
@@ -34,6 +34,8 @@ const HomeNav = styled.div`
     margin-right: 6vw;
     li {
       padding: 0 2vw;
+      font-family: 'Montserrat';
+      font-weight: 100;
     }
   }
   img {
@@ -105,7 +107,7 @@ const GlobalNavbar = ({ language, onLanguageClick }) => {
   return (
     <Wrapper>
       <HomeNav className='dynamic-navbar'>
-        <img src={process.env.PUBLIC_URL + '/plain-logo.png'} alt='logo'/>
+        <img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/>
         <NavUl>
           {renderMenus}
         </NavUl>

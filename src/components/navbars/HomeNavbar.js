@@ -59,6 +59,8 @@ const HomeNav = styled.div`
     margin-right: 6vw;
     li {
       padding: 0 2vw;
+      font-family: 'Montserrat';
+      font-weight: 100;
     }
   }
   img {

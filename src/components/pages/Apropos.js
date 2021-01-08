@@ -13,7 +13,7 @@ const MainTitle = styled.h1`
   font-weight: 400;
   font-size: 55px;
   text-align: center;
-  background-image: linear-gradient(120deg,#ebdfd9 0%,#ebdfd9 0%);
+  background-image: linear-gradient(120deg,#f3ece8 0%,#f3ece8 0%);
   background-repeat: no-repeat;
   background-size: 250px 20px;
   background-position-x: 100%;
@@ -42,19 +42,19 @@ const FilterDiv = styled.div`
   border-radius: 150px;
   position: absolute;
   left: 5vw;
-  background-color: rgba(205, 173, 161, 0.4);
+  background-color: rgba(249, 232, 225, 0.4);
   z-index: 999;
 `;
 
 const PrevDiv = styled.div`
   height: calc(80vh - 170px);
-  border-bottom: 50px solid #ebdfd9;
+  border-bottom: 50px solid #f3ece8;
   width: 18vw;
 `;
 
 const NextDiv = styled.div`
   height: calc(80vh - 170px);
-  border-top: 50px solid #ebdfd9;
+  border-top: 50px solid #f3ece8;
   width: 77vw;
   display: flex;
   flex-direction: column;
