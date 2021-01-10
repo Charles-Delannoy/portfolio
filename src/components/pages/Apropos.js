@@ -89,7 +89,7 @@ const Content = styled.div`
 `;
 
 const ProfilePic = styled.img`
-  width: 40%;
+  width: 45%;
   align-self: flex-end;
   ${mediaQueries('tab')`
     align-self: flex-start;
