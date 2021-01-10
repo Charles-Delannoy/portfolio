@@ -5,6 +5,11 @@ import Apropos from './Apropos';
 import Projet from './Projet';
 import ContactBtn from '../buttons/ContactBtn';
 
+let pos = window.scrollY;
+document.onscroll = function(){
+
+};
+
 const App = ({ language, onLanguageClick }) => {
   return (
     <div id='global-div'>

@@ -7,7 +7,7 @@ import styled from 'styled-components';
 
 const MainTitle = styled.h1`
   width: 300px;
-  text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  text-shadow: -1px 0 #f8f8f8, 0 1px #f8f8f8, 1px 0 #f8f8f8, 0 -1px #f8f8f8;
   height: 200px;
   line-height: 200px;
   margin: 0 auto;
@@ -35,6 +35,7 @@ const Wrapper = styled.div`
   position: relative;
   display: flex;
   flex-direction: column;
+  background-color: #f8f8f8;
 `;
 
 const Content = styled.div`
@@ -73,7 +74,7 @@ const Content = styled.div`
     background-position-x: 100%;
     background-position-y: 83%;
     padding: 10px;
-    color: #89c1da;
+    color: #5c9dba;
     ${mediaQueries('phone')`
       background-size: 100% 20%;
       background-position-y: 68%;
@@ -111,6 +112,8 @@ const TextWrapper = styled.div`
 
 const Apropos = ({ language, onLanguageClick }) => {
 
+  const Title = language === 'fr' ? 'À Propos' : 'About';
+
   const text = language === 'fr' ?
     <p>
       Issu d'une formation d'<strong>ingénieur généraliste</strong>, je suis devenu <strong>consultant en Organisation et Management</strong> en 2015. <br/>
@@ -129,7 +132,7 @@ const Apropos = ({ language, onLanguageClick }) => {
 
   return (
     <Wrapper>
-      <MainTitle>À Propos</MainTitle>
+      <MainTitle>{Title}</MainTitle>
       <Content>
         <ProfilePic src={process.env.PUBLIC_URL + '/profile.png'} alt='logo'/>
         <TextWrapper>

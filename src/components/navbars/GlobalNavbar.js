@@ -10,7 +10,14 @@ const NavUl = styled.ul`
   z-index: 1000;
   li {
     display:inline;
-    color: #6EB4D1;
+    a {
+      color: #5E6472;
+      text-decoration: none;
+      &:hover {
+        color: #6EB4D1;
+        cursor: pointer;
+      }
+    }
   }
 `;
 
@@ -89,14 +96,21 @@ const Wrapper = styled.div`
 
 const GlobalNavbar = ({ language, onLanguageClick }) => {
 
+
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li key={index}>{label}</li>)
+    return (<li key={index}><a onClick={() => goTo(item.position)}>{label}</a></li>)
   });
 
   const dynaNavbar = document.querySelector('.dynamic-navbar');
   let lastScrollValue = document.documentElement.scrollTop;
-  console.log(dynaNavbar);
+
+  const goTo = (position) => {
+    const dynaNavbar = document.querySelector('.dynamic-navbar');
+    window.scrollTo({ top: position + 1, behavior: 'smooth' });
+    setTimeout(function(){ dynaNavbar.classList.remove("show-navbar") }, 1000);
+  }
+
   document.addEventListener('scroll',() => {
       const dynaNavbar = document.querySelector('.dynamic-navbar');
       let top  = document.documentElement.scrollTop;;

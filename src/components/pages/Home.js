@@ -58,6 +58,7 @@ const ImgContent = styled.div`
   background-size: cover;
   background-position-y: 70%;
   width: 45vw;
+
   ${mediaQueries('tab')`
     background-position-x: 40%;
   `};

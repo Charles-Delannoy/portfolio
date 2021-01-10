@@ -94,9 +94,13 @@ const HomeNav = styled.div`
 
 const HomeNavbar = ({ language, onLanguageClick }) => {
 
+  const goTo = (position) => {
+    window.scrollTo({ top: position + 1, behavior: 'smooth' });
+  }
+
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li key={index}><a>{label}</a></li>)
+    return (<li key={index}><a onClick={() => goTo(item.position)}>{label}</a></li>)
   });
 
   return (
