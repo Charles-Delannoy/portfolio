@@ -3,6 +3,11 @@ import GlobalNavbar from '../navbars/GlobalNavbar';
 import Home from './Home';
 import Apropos from './Apropos';
 import Projet from './Projet';
+import styled from 'styled-components';
+
+const Wrapper = styled.div`
+  -webkit-overflow-scrolling: touch;
+`;
 
 const App = ({ language, onLanguageClick }) => {
 
@@ -42,12 +47,12 @@ const App = ({ language, onLanguageClick }) => {
 
 
   return (
-    <div id='global-div'>
+    <Wrapper>
       <GlobalNavbar language={language} onLanguageClick={onLanguageClick}/>
       <Home language={language} onLanguageClick={onLanguageClick}/>
       <Apropos language={language} onLanguageClick={onLanguageClick}/>
       <Projet />
-    </div>
+    </Wrapper>
   );
 };
 

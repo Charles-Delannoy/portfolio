@@ -101,7 +101,7 @@ const Home = ({ language, onLanguageClick }) => {
   const [rightPos, setRightPos] = useState(0);
 
   useEffect(() => {
-    const newHeight = document.getElementById('global-div').clientHeight;
+    const newHeight = document.body.clientHeight;
     setFullHeight(newHeight);
   }, [])
 
