@@ -1,5 +1,5 @@
-import React, { useState, useEffect, Fragment } from 'react';
-import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React, { useState } from 'react';
+import { BrowserRouter as Router } from 'react-router-dom';
 import FullPage from './pages/FullPage';
 
 const App = () => {

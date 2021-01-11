@@ -99,10 +99,9 @@ const GlobalNavbar = ({ language, onLanguageClick }) => {
 
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li key={index}><a onClick={() => goTo(item.position)}>{label}</a></li>)
+    return (<li key={index}><a onClick={() => goTo(item.position)}>{label}</a></li>);
   });
 
-  const dynaNavbar = document.querySelector('.dynamic-navbar');
   let lastScrollValue = document.documentElement.scrollTop;
 
   const goTo = (position) => {
@@ -113,7 +112,7 @@ const GlobalNavbar = ({ language, onLanguageClick }) => {
 
   document.addEventListener('scroll',() => {
       const dynaNavbar = document.querySelector('.dynamic-navbar');
-      let top  = document.documentElement.scrollTop;;
+      let top  = document.documentElement.scrollTop;
       if(lastScrollValue < top && dynaNavbar) {
         dynaNavbar.classList.remove("show-navbar");
 

@@ -4,10 +4,6 @@ import { mediaQueries } from "../mediaQueries/MediaQueries"
 // External librairies
 import styled from 'styled-components';
 
-
-
-const ContactBtn = ({ language, rightPos }) => {
-
   const Button = styled.button`
     font-family: 'Montserrat';
     font-size: 40px;
@@ -24,7 +20,7 @@ const ContactBtn = ({ language, rightPos }) => {
     position: -webkit-sticky;
     position: fixed;
     top: 75vh;
-    right: -${rightPos}px;
+    right: ${props => `-${props.rightpos}px`};
     z-index: 1001;
     img {
       transform: scaleX(1);
@@ -45,10 +41,14 @@ const ContactBtn = ({ language, rightPos }) => {
     `};
   `;
 
+
+const ContactBtn = ({ language, rightPos }) => {
+
+
   const text = language === 'fr' ? 'Contactez moi' : 'Contact me';
 
   return (
-    <Button><img src={process.env.PUBLIC_URL + '/arrow.png'} alt='arrow'/> <p>{text}</p></Button>
+    <Button rightpos={rightPos}><img src={process.env.PUBLIC_URL + '/arrow.png'} alt='arrow'/> <p>{text}</p></Button>
   );
 };
 
