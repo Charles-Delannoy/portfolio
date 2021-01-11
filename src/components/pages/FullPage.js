@@ -9,20 +9,21 @@ const Wrapper = styled.div`
   -webkit-overflow-scrolling: touch;
 `;
 
-const App = ({ language, onLanguageClick }) => {
+const FullPage = ({ language, onLanguageClick }) => {
 
   const [top, setTop] = useState(0);
   const [position, setPosition] = useState(window.scrollY)
 
   const fullPageScroll = (top) => {
+    const sectionHeight = document.body.clientHeight / 3;
     document.addEventListener("scroll", function scrollListen(e) {
       let scrollValue = top;
       console.log(window.scrollY, scrollValue)
       if (window.scrollY > scrollValue) {
-        scrollValue = top + window.innerHeight;
+        scrollValue = top + sectionHeight;
         console.log(scrollValue);
       } else {
-        scrollValue = top - window.innerHeight;
+        scrollValue = top - sectionHeight;
         console.log(scrollValue);
       }
 
@@ -56,4 +57,4 @@ const App = ({ language, onLanguageClick }) => {
   );
 };
 
-export default App;
+export default FullPage;
