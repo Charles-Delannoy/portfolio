@@ -14,27 +14,31 @@ const FullPage = ({ language, onLanguageClick }) => {
   const [top, setTop] = useState(0);
   const [position, setPosition] = useState(window.scrollY)
 
-  const fullPageScroll = (top) => {
+  const scrollListen = (e) => {
     const sectionHeight = document.body.clientHeight / 3;
-    document.addEventListener("scroll", function scrollListen(e) {
-      let scrollValue = top;
-      console.log(window.scrollY, scrollValue)
-      if (window.scrollY > scrollValue) {
-        scrollValue = top + sectionHeight;
-        console.log(scrollValue);
-      } else {
-        scrollValue = top - sectionHeight;
-        console.log(scrollValue);
-      }
+    let scrollValue = top;
+    console.log(window.scrollY, scrollValue)
+    if (window.scrollY > scrollValue) {
+      scrollValue = top + sectionHeight;
+      console.log(scrollValue);
+    } else {
+      scrollValue = top - sectionHeight;
+      console.log(scrollValue);
+    }
 
-      if (scrollValue >= 0 && scrollValue <= document.body.clientHeight) {
-        document.removeEventListener('scroll', scrollListen);
-        window.scrollTo({ top: scrollValue, behavior: 'smooth' });
-        setTimeout(() => setTop(scrollValue), 1000);
-      }
+    if (scrollValue >= 0 && scrollValue <= document.body.clientHeight) {
+      stopFullPageListener(scrollValue)
+    }
+  }
 
+  const stopFullPageListener = (scrollValue) => {
+    document.removeEventListener('scroll', scrollListen);
+    window.scrollTo({ top: scrollValue, behavior: 'smooth' });
+    setTimeout(() => setTop(scrollValue), 1000);
+  }
 
-    });
+  const fullPageScroll = (top) => {
+    document.addEventListener("scroll", scrollListen);
   };
 
   useEffect(() => {
@@ -43,14 +47,13 @@ const FullPage = ({ language, onLanguageClick }) => {
 
   useEffect(() => {
     fullPageScroll(top);
-
   }, [top])
 
 
   return (
     <Wrapper>
-      <GlobalNavbar language={language} onLanguageClick={onLanguageClick}/>
-      <Home language={language} onLanguageClick={onLanguageClick}/>
+      <GlobalNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener}/>
+      <Home language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener}/>
       <Apropos language={language} onLanguageClick={onLanguageClick}/>
       <Projet />
     </Wrapper>

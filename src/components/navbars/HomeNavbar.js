@@ -97,18 +97,21 @@ const HomeNav = styled.div`
   `};
 `;
 
-const HomeNavbar = ({ language, onLanguageClick }) => {
+const HomeNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener }) => {
 
 
-
+  console.log(stopFullPageListener);
 
   const goTo = (position) => {
-    window.scrollTo({ top: position + 1, behavior: 'smooth' });
+    stopFullPageListener(position);
+
   }
+
+  const sectionHeight = document.body.clientHeight / 3;
 
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li key={index}><a onClick={() => goTo(item.position)}>{label}</a></li>)
+    return (<li key={index}><a onClick={() => goTo(item.position * sectionHeight)}>{label}</a></li>)
   });
 
   return (

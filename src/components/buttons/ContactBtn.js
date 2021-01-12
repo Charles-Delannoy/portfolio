@@ -8,7 +8,7 @@ import styled from 'styled-components';
     font-family: 'Montserrat';
     font-size: 40px;
     font-weight: 300;
-    color: #c5c2c2;
+    color: #646a77;
     background-color: #fff;
     border: thin solid #c5c2c2;
     border-right: none;

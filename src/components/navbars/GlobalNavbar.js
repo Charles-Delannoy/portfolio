@@ -96,10 +96,11 @@ const Wrapper = styled.div`
 
 const GlobalNavbar = ({ language, onLanguageClick }) => {
 
+  const sectionHeight = document.body.clientHeight / 3;
 
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li key={index}><a onClick={() => goTo(item.position)}>{label}</a></li>);
+    return (<li key={index}><a onClick={() => goTo(item.position * sectionHeight)}>{label}</a></li>);
   });
 
   let lastScrollValue = document.documentElement.scrollTop;
@@ -110,20 +111,30 @@ const GlobalNavbar = ({ language, onLanguageClick }) => {
     setTimeout(function(){ dynaNavbar.classList.remove("show-navbar") }, 1000);
   }
 
-  document.addEventListener('scroll',() => {
-      const dynaNavbar = document.querySelector('.dynamic-navbar');
-      let top  = document.documentElement.scrollTop;
-      if(lastScrollValue < top && dynaNavbar) {
-        dynaNavbar.classList.remove("show-navbar");
-
-      } else if (top < window.innerHeight && dynaNavbar) {
-        dynaNavbar.classList.remove("show-navbar");
-
-      } else if (dynaNavbar) {
-        dynaNavbar.classList.add("show-navbar");
-      }
-      lastScrollValue = top;
+  document.addEventListener('mousemove', (e) => {
+    const dynaNavbar = document.querySelector('.dynamic-navbar');
+    let top  = window.innerHeight;
+    if (lastScrollValue >= top && e.clientY <= 150) {
+      dynaNavbar.classList.add("show-navbar");
+    } else {
+      dynaNavbar.classList.remove("show-navbar");
+    }
   });
+
+  // document.addEventListener('scroll',() => {
+  //     const dynaNavbar = document.querySelector('.dynamic-navbar');
+  //     let top  = document.documentElement.scrollTop;
+  //     if(lastScrollValue < top && dynaNavbar) {
+  //       dynaNavbar.classList.remove("show-navbar");
+
+  //     } else if (top < window.innerHeight && dynaNavbar) {
+  //       dynaNavbar.classList.remove("show-navbar");
+
+  //     } else if (dynaNavbar) {
+  //       dynaNavbar.classList.add("show-navbar");
+  //     }
+  //     lastScrollValue = top;
+  // });
 
   return (
     <Wrapper>

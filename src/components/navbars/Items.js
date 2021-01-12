@@ -14,20 +14,22 @@ const Items = [
   {
     label: 'À propos',
     label_en: 'About',
-    position: (window.innerHeight)
+    position: 1
   },
   {
     label: 'Mes projets',
     label_en: 'My projects',
-    position: (2 * window.innerHeight)
+    position: 2
   },
   {
     label: 'Mes formations',
-    label_en: 'Education'
+    label_en: 'Education',
+    position: 3
   },
   {
     label: 'Mes outils',
-    label_en: 'My tools'
+    label_en: 'My tools',
+    position: 4
   },
 ];
 

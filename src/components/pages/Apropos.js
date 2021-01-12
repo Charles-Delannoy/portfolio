@@ -74,7 +74,7 @@ const Content = styled.div`
     background-position-x: 100%;
     background-position-y: 83%;
     padding: 10px;
-    color: #5c9dba;
+    color: #005b84;
     ${mediaQueries('phone')`
       background-size: 100% 20%;
       background-position-y: 68%;
