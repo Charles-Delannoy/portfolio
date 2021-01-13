@@ -2,41 +2,10 @@ import React, { Fragment } from 'react';
 // Media Queries
 import { mediaQueries } from "../mediaQueries/MediaQueries"
 // My components
+import MainTitle from '../styled/MainTitle';
+import Wrapper from '../styled/Wrapper';
 // External librairies
 import styled from 'styled-components';
-
-const MainTitle = styled.h1`
-  width: 300px;
-  text-shadow: -1px 0 #f8f8f8, 0 1px #f8f8f8, 1px 0 #f8f8f8, 0 -1px #f8f8f8;
-  height: 200px;
-  line-height: 200px;
-  margin: 0 auto;
-  font-family: 'Montserrat';
-  font-weight: 300;
-  font-size: 55px;
-  text-align: center;
-  background-image: linear-gradient(120deg,#dce4e8 0%,#dce4e8 0%);
-  background-repeat: no-repeat;
-  background-size: 250px 5px;
-  background-position-x: 100%;
-  background-position-y: 60%;
-  ${mediaQueries('phone')`
-    height: 100px;
-    line-height: 100px;
-    font-size: 35px;
-    background-size: 170px 5px;
-    background-position-x: 62%;
-    background-position-y: 63%;
-  `};
-`;
-
-const Wrapper = styled.div`
-  height: calc(100vh);
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  background-color: #f8f8f8;
-`;
 
 const Content = styled.div`
   display: flex;
@@ -131,7 +100,7 @@ const Apropos = ({ language, onLanguageClick }) => {
     </p>
 
   return (
-    <Wrapper>
+    <Wrapper style={{backgroundColor: '#f8f8f8'}}>
       <MainTitle>{Title}</MainTitle>
       <Content>
         <ProfilePic src={process.env.PUBLIC_URL + '/profile.png'} alt='logo'/>

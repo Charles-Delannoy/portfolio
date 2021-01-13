@@ -99,15 +99,11 @@ const HomeNav = styled.div`
 
 const HomeNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener }) => {
 
-
-  console.log(stopFullPageListener);
-
   const goTo = (position) => {
     stopFullPageListener(position);
-
   }
 
-  const sectionHeight = document.body.clientHeight / 3;
+  const sectionHeight = document.body.clientHeight / 5;
 
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;

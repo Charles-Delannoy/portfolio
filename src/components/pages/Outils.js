@@ -6,9 +6,9 @@ import Wrapper from '../styled/Wrapper';
 import styled from 'styled-components';
 
 
-const Projet = ({ language, onLanguageClick }) => {
+const Outils = ({ language, onLanguageClick }) => {
 
-  const title = language ==='fr' ? 'Mes Projets' : 'My Projects'
+  const title = language ==='fr' ? 'Mes Outils' : 'My Tools'
 
   return (
     <Wrapper style={{backgroundColor: '#fff'}}>
@@ -17,4 +17,4 @@ const Projet = ({ language, onLanguageClick }) => {
   );
 };
 
-export default Projet;
+export default Outils;

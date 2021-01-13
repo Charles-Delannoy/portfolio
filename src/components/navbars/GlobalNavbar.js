@@ -36,7 +36,7 @@ const HomeNav = styled.div`
   display: flex;
   justify-content: center;;
   align-items: center;
-  z-index: 1000;
+  z-index: 1001;
   ul {
     li {
       font-size: 30px;
@@ -53,6 +53,8 @@ const HomeNav = styled.div`
     height: 100px;
     border: 1px solid #fff;
     border-radius: 50%;
+  }
+  .logo-link {
     position: absolute;
     left: -40px;
   }
@@ -86,6 +88,8 @@ const LanguageDiv = styled.div`
 `;
 
 const Wrapper = styled.div`
+  z-index: 1001;
+  background-color: #fff;
   .show-navbar {
     top: 0px;
   }
@@ -94,9 +98,9 @@ const Wrapper = styled.div`
   `};
 `;
 
-const GlobalNavbar = ({ language, onLanguageClick }) => {
+const GlobalNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener }) => {
 
-  const sectionHeight = document.body.clientHeight / 3;
+  const sectionHeight = document.body.clientHeight / 5;
 
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
@@ -106,9 +110,11 @@ const GlobalNavbar = ({ language, onLanguageClick }) => {
   let lastScrollValue = document.documentElement.scrollTop;
 
   const goTo = (position) => {
-    const dynaNavbar = document.querySelector('.dynamic-navbar');
-    window.scrollTo({ top: position + 1, behavior: 'smooth' });
-    setTimeout(function(){ dynaNavbar.classList.remove("show-navbar") }, 1000);
+    stopFullPageListener(position);
+  }
+
+  const logoClick = () => {
+    goTo(0);
   }
 
   document.addEventListener('mousemove', (e) => {
@@ -121,25 +127,18 @@ const GlobalNavbar = ({ language, onLanguageClick }) => {
     }
   });
 
-  // document.addEventListener('scroll',() => {
-  //     const dynaNavbar = document.querySelector('.dynamic-navbar');
-  //     let top  = document.documentElement.scrollTop;
-  //     if(lastScrollValue < top && dynaNavbar) {
-  //       dynaNavbar.classList.remove("show-navbar");
-
-  //     } else if (top < window.innerHeight && dynaNavbar) {
-  //       dynaNavbar.classList.remove("show-navbar");
-
-  //     } else if (dynaNavbar) {
-  //       dynaNavbar.classList.add("show-navbar");
-  //     }
-  //     lastScrollValue = top;
-  // });
+  document.addEventListener('scroll',() => {
+      const dynaNavbar = document.querySelector('.dynamic-navbar');
+      let top  = document.documentElement.scrollTop;
+      if (top < window.innerHeight && dynaNavbar) {
+        dynaNavbar.classList.remove("show-navbar");
+      }
+  });
 
   return (
     <Wrapper>
       <HomeNav className='dynamic-navbar'>
-        <img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/>
+        <a className='logo-link' onClick={() => goTo(0)}><img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/></a>
         <NavUl>
           {renderMenus}
         </NavUl>

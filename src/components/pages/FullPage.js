@@ -3,6 +3,8 @@ import GlobalNavbar from '../navbars/GlobalNavbar';
 import Home from './Home';
 import Apropos from './Apropos';
 import Projet from './Projet';
+import Formations from './Formations';
+import Outils from './Outils';
 import styled from 'styled-components';
 
 const Wrapper = styled.div`
@@ -15,16 +17,15 @@ const FullPage = ({ language, onLanguageClick }) => {
   const [position, setPosition] = useState(window.scrollY)
 
   const scrollListen = (e) => {
-    const sectionHeight = document.body.clientHeight / 3;
+    const sectionHeight = document.body.clientHeight / 5;
     let scrollValue = top;
-    console.log(window.scrollY, scrollValue)
     if (window.scrollY > scrollValue) {
       scrollValue = top + sectionHeight;
-      console.log(scrollValue);
     } else {
       scrollValue = top - sectionHeight;
-      console.log(scrollValue);
     }
+
+    scrollValue = scrollValue < 0 ? 0 : scrollValue;
 
     if (scrollValue >= 0 && scrollValue <= document.body.clientHeight) {
       stopFullPageListener(scrollValue)
@@ -55,7 +56,9 @@ const FullPage = ({ language, onLanguageClick }) => {
       <GlobalNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener}/>
       <Home language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener}/>
       <Apropos language={language} onLanguageClick={onLanguageClick}/>
-      <Projet />
+      <Projet language={language}/>
+      <Formations language={language}/>
+      <Outils language={language}/>
     </Wrapper>
   );
 };
