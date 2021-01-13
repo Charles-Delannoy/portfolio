@@ -32,12 +32,10 @@ const Card = styled.div`
   &:hover {
     transform: scale(1.1);
     transition: all ease-in-out .5s;
-    div {
-      div {
-        margin: 0 2%;
-        width: 15%;
-        transition: all ease-in-out .5s;
-      }
+    .frame {
+      margin: 0 2%;
+      width: 15%;
+      transition: all ease-in-out .5s;
     }
   }
 `;
@@ -67,17 +65,20 @@ const HoverFilter = styled.div`
   position: absolute;
   z-index: 1003;
   transition: all ease-in-out .5s;
-  p {
+  .description {
+    font-family: 'Montserrat';
     position: absolute;
     left: 100%;
     color: #fff;
     transition: all ease-in-out .5s;
+    text-align: center;
+    width: 80%;
   }
   &:hover {
     background-color: rgba(0, 0, 0, 0.4);
     opacity: 1;
     transition: all ease-in-out .5s;
-    p {
+    .description {
       left: 20%;
       transition: all ease-in-out .5s;
     }
@@ -104,13 +105,24 @@ const Formations = ({ language, onLanguageClick }) => {
   console.log(FormationItems);
 
   const rendereFormations = FormationItems.map((item) => {
+
+    const diplomes = item.diplomes.map((diplome) => {
+      return (
+        <p><strong>{diplome}</strong></p>
+      );
+    })
+
     return (
       <Card style={{backgroundImage: `url(${process.env.PUBLIC_URL}/${item.img})`}}>
         <HoverFilter>
-          <p>Une description</p>
+          <div className='description'>
+            <h2>{item.date}</h2>
+            {diplomes}
+            <p>{item.description}</p>
+          </div>
         </HoverFilter>
         <Filter>
-          <Cadre>
+          <Cadre className='frame'>
             <Logo src={process.env.PUBLIC_URL + `/${item.logo}`} alt={item.label}/>
           </Cadre>
         </Filter>
