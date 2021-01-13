@@ -3,6 +3,8 @@ import React, { Fragment } from 'react';
 import MainTitle from '../styled/MainTitle';
 import Wrapper from '../styled/Wrapper';
 import FormationItems from './FormationItems';
+// Media Queries
+import { mediaQueries } from "../mediaQueries/MediaQueries"
 // External librairies
 import styled from 'styled-components';
 
@@ -24,18 +26,35 @@ const Content = styled.div`
 `;
 
 const Card = styled.div`
+  background-position-y: 20%;
   width: 100%;
   height: 22%;
   background-size: cover;
   position: relative;
-  transition: all ease-in-out .5s;
+  transition: all ease-in-out .6s;
   &:hover {
     transform: scale(1.1);
-    transition: all ease-in-out .5s;
+    transition: all ease-in-out .6s;
     .frame {
       margin: 0 2%;
       width: 15%;
-      transition: all ease-in-out .5s;
+      transition: all ease-in-out .6s;
+    }
+    .hover-content {
+      width: 80%;
+      margin-left: 20%;
+      background-color: rgba(0, 0, 0, 0.7);
+      opacity: 1;
+      ${mediaQueries('phone')`
+        width: 100%;
+        margin-left: 0%;
+      `};
+      transition: all ease-in-out .6s;
+      .description {
+        width: 100%;
+        left: 0%;
+        transition: all ease-in-out .6s;
+      }
     }
   }
 `;
@@ -50,11 +69,11 @@ const Filter = styled.div`
   width: 100%;
   height: 100%;
   z-index: 1000;
-  background-color: rgba(250, 250, 250, 0.4);
 `;
 
 const HoverFilter = styled.div`
   display: flex;
+  align-items: center;
   flex-direction: column;
   justify-content: space-around;
   position: relative;
@@ -63,36 +82,85 @@ const HoverFilter = styled.div`
   width: 100%;
   height: 100%;
   position: absolute;
-  z-index: 1003;
-  transition: all ease-in-out .5s;
+  z-index: 1001;
+  transition: all ease-in-out .6s;
   .description {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1%;
+    h2 {
+      font-size: 20px;
+      font-weight: 400;
+      margin: 0 2%;
+      border-top: 1px solid #fff;
+      line-height: 20px;
+      padding-top: 10px;
+      ${mediaQueries('phone')`
+        font-size: 15px;
+        padding-top: 0;
+      `};
+    }
+    strong {
+      font-weight: 400;
+    }
+    .descr-p {
+      width: 20%;
+      height: 80%;
+      background-color: rgba(250, 250, 250, 0.4);
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      p {
+        font-size: 15px;
+        font-weight: 100;
+        margin: 0;
+        padding: 10px 0;
+      }
+      ${mediaQueries('phone')`
+        display: none;
+      `};
+    }
+    .education {
+      height: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      margin-bottom: 5px;
+      ${mediaQueries('phone')`
+        height: 60%;
+      `};
+      p {
+        font-size: 20px;
+        padding: 0;
+        padding-bottom: 5px;
+        margin: 0;
+        ${mediaQueries('phone')`
+          font-size: 10px;
+          padding: 0;
+        `};
+      }
+    }
     font-family: 'Montserrat';
     position: absolute;
     left: 100%;
     color: #fff;
-    transition: all ease-in-out .5s;
+    transition: all ease-in-out .6s;
     text-align: center;
     width: 80%;
   }
-  &:hover {
-    background-color: rgba(0, 0, 0, 0.4);
-    opacity: 1;
-    transition: all ease-in-out .5s;
-    .description {
-      left: 20%;
-      transition: all ease-in-out .5s;
-    }
-  }
+
 `;
 
 const Cadre = styled.div`
+  background-color: rgba(250, 250, 250, 0.4);
   height: 70%;
   width: calc(96% - 8px);
   border: 4px solid #fff;
   margin: 0 calc(2% - 4px);
   padding: 5px;
   transition: margin ease-in-out .10s;
-  transition: width ease-in-out .5s;
+  transition: width ease-in-out .6s;
 `;
 
 const Logo = styled.img`
@@ -108,17 +176,21 @@ const Formations = ({ language, onLanguageClick }) => {
 
     const diplomes = item.diplomes.map((diplome) => {
       return (
-        <p><strong>{diplome}</strong></p>
+        <p key={item.id + diplome}><strong>{diplome}</strong></p>
       );
     })
 
     return (
-      <Card style={{backgroundImage: `url(${process.env.PUBLIC_URL}/${item.img})`}}>
-        <HoverFilter>
+      <Card key={item.id} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/${item.img})`}}>
+        <HoverFilter className='hover-content'>
           <div className='description'>
-            <h2>{item.date}</h2>
-            {diplomes}
-            <p>{item.description}</p>
+            <div className='descr-p'>
+              <p>{item.description}</p>
+            </div>
+            <div style={{flexGrow: '1', height: '100%'}}>
+              <div className='education'>{diplomes}</div>
+              <h2>{item.date}</h2>
+            </div>
           </div>
         </HoverFilter>
         <Filter>

@@ -1,9 +1,10 @@
 const FormationItems = [
   {
+    id: 1,
     label: 'HEI',
     img: 'HEI.jpg',
     logo: 'logoHei.png',
-    date: 'Décembre 2014',
+    date: '2008 - 2014',
     date_en: 'December 2014',
     diplomes: ["Diplôme d'Ingénieur Généraliste"],
     diplomes_en: ["Degree in General Engineering"],
@@ -11,6 +12,7 @@ const FormationItems = [
     description_en: "General engineering school based in Lille, France"
   },
   {
+    id: 2,
     label: 'OpenClassroom',
     img: 'open.jpg',
     logo: 'logoOpen.png',
@@ -22,10 +24,11 @@ const FormationItems = [
     description_en: "Site web de formation en ligne qui propose à ses membres des cours certifiants"
   },
   {
+    id: 3,
     label: 'Le Wagon',
     img: 'wagon.jpg',
     logo: 'logoWagon.png',
-    date: 'Juin 2020',
+    date: 'Avril - Juin 2020',
     date_en: 'Juin 2020',
     diplomes: ["Certification de concepteur - développeur d'applications web"],
     diplomes_en: ["Certification de concepteur - développeur d'applications web"],
@@ -33,8 +36,9 @@ const FormationItems = [
     description_en: "Bootcamp de développement web (HTML, CSS, JS, Ruby, RoR)"
   },
   {
+    id: 4,
     label: 'Udemy',
-    img: 'udemy.jpg',
+    img: 'udemy.png',
     logo: 'logoUdemy.svg',
     date: '2020',
     date_en: '2020',
