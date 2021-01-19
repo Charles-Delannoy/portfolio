@@ -72,6 +72,7 @@ const Filter = styled.div`
 `;
 
 const HoverFilter = styled.div`
+  overflow: hidden;
   display: flex;
   align-items: center;
   flex-direction: column;
@@ -106,7 +107,7 @@ const HoverFilter = styled.div`
     .descr-p {
       margin-right: 1%;
       width: 20%;
-      height: 80%;
+      min-height: 80%;
       background-color: rgba(250, 250, 250, 0.4);
       display: flex;
       flex-direction: column;
