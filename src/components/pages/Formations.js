@@ -97,7 +97,7 @@ const HoverFilter = styled.div`
       line-height: 20px;
       padding-top: 10px;
       ${mediaQueries('phone')`
-        font-size: 15px;
+        font-size: 3vw;
         padding-top: 0;
       `};
     }
@@ -137,7 +137,7 @@ const HoverFilter = styled.div`
         padding-bottom: 5px;
         margin: 0;
         ${mediaQueries('phone')`
-          font-size: 10px;
+          font-size: 3vw;
           padding: 0;
         `};
       }
