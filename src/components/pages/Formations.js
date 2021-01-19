@@ -79,7 +79,7 @@ const HoverFilter = styled.div`
   position: relative;
   align-self: center;
   opacity: 0;
-  width: 100%;
+
   height: 100%;
   position: absolute;
   z-index: 1001;
@@ -88,7 +88,6 @@ const HoverFilter = styled.div`
     height: 100%;
     display: flex;
     align-items: center;
-    padding: 1%;
     h2 {
       font-size: 20px;
       font-weight: 400;
@@ -105,6 +104,7 @@ const HoverFilter = styled.div`
       font-weight: 400;
     }
     .descr-p {
+      margin-right: 1%;
       width: 20%;
       height: 80%;
       background-color: rgba(250, 250, 250, 0.4);
@@ -170,11 +170,13 @@ const Logo = styled.img`
 
 const Formations = ({ language, onLanguageClick }) => {
 
-  console.log(FormationItems);
-
   const rendereFormations = FormationItems.map((item) => {
 
-    const diplomes = item.diplomes.map((diplome) => {
+    const translateDiplomes = language === 'fr' ? item.diplomes : item.diplomes_en;
+    const date = language === 'fr' ? item.date : item.date_en;
+    const description = language === 'fr' ? item.description : item.description_en;
+
+    const diplomes = translateDiplomes.map((diplome) => {
       return (
         <p key={item.id + diplome}><strong>{diplome}</strong></p>
       );
@@ -184,12 +186,12 @@ const Formations = ({ language, onLanguageClick }) => {
       <Card key={item.id} style={{backgroundImage: `url(${process.env.PUBLIC_URL}/${item.img})`}}>
         <HoverFilter className='hover-content'>
           <div className='description'>
-            <div className='descr-p'>
-              <p>{item.description}</p>
-            </div>
             <div style={{flexGrow: '1', height: '100%'}}>
               <div className='education'>{diplomes}</div>
-              <h2>{item.date}</h2>
+              <h2>{date}</h2>
+            </div>
+            <div className='descr-p'>
+              <p>{description}</p>
             </div>
           </div>
         </HoverFilter>

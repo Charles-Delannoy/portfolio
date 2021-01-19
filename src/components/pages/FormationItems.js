@@ -5,7 +5,7 @@ const FormationItems = [
     img: 'HEI.jpg',
     logo: 'logoHei.png',
     date: '2008 - 2014',
-    date_en: 'December 2014',
+    date_en: '2008 - 2014',
     diplomes: ["Diplôme d'Ingénieur Généraliste"],
     diplomes_en: ["Degree in General Engineering"],
     description: "Ecole d'ingénieur généraliste basée à Lille",
@@ -19,9 +19,9 @@ const FormationItems = [
     date: '2019',
     date_en: '2019',
     diplomes: ["Apprenez à créer votre site web avec HTML5 et CSS3", "Concevez votre site web avec PHP et MySQL"],
-    diplomes_en: ['diplome'],
+    diplomes_en: ['Learn how to create a website with HTML5 and CSS3', 'Design your website with PHP and MySQL'],
     description: "Site web de formation en ligne qui propose à ses membres des cours certifiants",
-    description_en: "Site web de formation en ligne qui propose à ses membres des cours certifiants"
+    description_en: "Online training website that offers certified courses to its members"
   },
   {
     id: 3,
@@ -29,11 +29,11 @@ const FormationItems = [
     img: 'wagon.jpg',
     logo: 'logoWagon.png',
     date: 'Avril - Juin 2020',
-    date_en: 'Juin 2020',
+    date_en: 'April - June 2020',
     diplomes: ["Certification de concepteur - développeur d'applications web"],
-    diplomes_en: ["Certification de concepteur - développeur d'applications web"],
+    diplomes_en: ["Web Application Designer - Developer Certification"],
     description: "Bootcamp de développement web (HTML, CSS, JS, Ruby, RoR)",
-    description_en: "Bootcamp de développement web (HTML, CSS, JS, Ruby, RoR)"
+    description_en: "Web development bootcamp (HTML, CSS, JS, Ruby, RoR)"
   },
   {
     id: 4,
@@ -44,8 +44,8 @@ const FormationItems = [
     date_en: '2020',
     diplomes: ['Moderne React avec Redux [Mise à jour 2020]'],
     diplomes_en: ['Modern React with Redux [2020 Update]'],
-    description: "Udemy est un site internet de formation en ligne à destination des adultes et des étudiants",
-    description_en: "Udemy est un site internet de formation en ligne à destination des adultes et des étudiants"
+    description: "Site internet de formation en ligne à destination des adultes et des étudiants",
+    description_en: "Online training website for adults and students"
   }
 ];
 
