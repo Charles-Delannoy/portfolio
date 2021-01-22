@@ -6,19 +6,33 @@ import { faPhoneSquareAlt, faEnvelopeSquare } from '@fortawesome/free-solid-svg-
 import { fab, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const ContactDiv = styled.div`
+  box-shadow: 0px 0px 30px -19px rgba(0,0,0,0.75);
   display: flex;
   flex-direction: column;
   justify-content: space-around;
   position: relative;
   position: -webkit-sticky;
   position: fixed;
-  border: thin solid;
-  background-color: #fff;
+  border: thin solid #c5c2c2;
+  background-color: #f8f8f8;
   z-index: 1010;
-  top: 70vh;
+  top: 64vh;
   right: -100%;
-  padding: 20px;
+  padding: 25px;
   transition: all ease-in-out .8s;
+  .visit-card {
+    margin: 10px 0;
+    display: flex;
+    h2 {
+      font-weight: 300;
+      margin: 0;
+    }
+    img {
+      height: 64px;
+      margin-right: 10px;
+      border-radius: 3px;
+    }
+  }
   a {
     text-decoration: none;
   }
@@ -26,10 +40,12 @@ const ContactDiv = styled.div`
     font-weight: 100;
     display: flex;
     align-items: center;
+    font-size: 25px;
+    margin-top: 0;
   }
   .icon {
-    font-size: 40px;
-    margin-right: 10px;
+    font-size: 35px;
+    margin-right: 20px;
   }
   button {
     background-color: rgba(0,0,0,0);
@@ -56,6 +72,10 @@ const Contact = ({ language }) => {
   return (
     <ContactDiv id='contactdiv'>
       <button onClick={() => {document.getElementById('contactdiv').classList.remove('contact-show')}}><img src={process.env.PUBLIC_URL + '/fleche-contact.svg'} alt='arrow' /></button>
+      <div className='visit-card'>
+        <img src={process.env.PUBLIC_URL + '/profile.jpeg'} alt="profile-pic"/>
+        <h2>Charles Delannoy</h2>
+      </div>
       <a href='tel:+33684587960'>
         <h2><FontAwesomeIcon className='icon' icon={faPhoneSquareAlt} /> {phone}</h2>
       </a>
