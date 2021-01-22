@@ -21,7 +21,8 @@ import styled from 'styled-components';
     position: fixed;
     top: 75vh;
     right: ${props => `-${props.rightpos}px`};
-    z-index: 1001;
+    z-index: 1005;
+    outline: none;
     img {
       transform: scaleX(1);
       height: 40px;
@@ -45,10 +46,11 @@ import styled from 'styled-components';
 const ContactBtn = ({ language, rightPos }) => {
 
 
+
   const text = language === 'fr' ? 'Contactez moi' : 'Contact me';
 
   return (
-    <Button rightpos={rightPos}><img src={process.env.PUBLIC_URL + '/arrow.png'} alt='arrow'/> <p>{text}</p></Button>
+    <Button onClick={() => document.getElementById('contactdiv').classList.add('contact-show')} rightpos={rightPos}><img src={process.env.PUBLIC_URL + '/arrow.png'} alt='arrow'/> <p>{text}</p></Button>
   );
 };
 

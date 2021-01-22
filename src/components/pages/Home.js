@@ -4,6 +4,7 @@ import { mediaQueries } from "../mediaQueries/MediaQueries"
 // My components
 import ContactBtn from '../buttons/ContactBtn';
 import HomeNavbar from '../navbars/HomeNavbar';
+import Contact from './pagesComponents/Contact';
 // External librairies
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -118,6 +119,7 @@ const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener 
 
   return (
     <Fragment>
+      <Contact language={language}/>
       <ContactBtn language={language} rightPos={rightPos}/>
       <HomeNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener}/>
       <Wrapper>

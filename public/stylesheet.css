@@ -1,0 +1,17 @@
+body {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+#root {
+  margin: 0;
+  padding: 0;
+  overflow-y: scroll !important;
+  -webkit-overflow-scrolling: touch;
+}
+
+.contact-show {
+  right: -0.5% !important;
+}

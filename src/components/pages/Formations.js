@@ -2,7 +2,7 @@ import React, { Fragment } from 'react';
 // My components
 import MainTitle from '../styled/MainTitle';
 import Wrapper from '../styled/Wrapper';
-import FormationItems from './FormationItems';
+import FormationItems from './pagesComponents/FormationItems';
 // Media Queries
 import { mediaQueries } from "../mediaQueries/MediaQueries"
 // External librairies

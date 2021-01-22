@@ -6,7 +6,7 @@ const FormationItems = [
     logo: 'logoHei.png',
     date: '2008 - 2014',
     date_en: '2008 - 2014',
-    diplomes: ["Diplôme d'Ingénieur Généraliste"],
+    diplomes: ["Diplôme d'Ingénieur Généraliste", "Informatique (ITI), Organisation & Management (OME)"],
     diplomes_en: ["Degree in General Engineering"],
     description: "Ecole d'ingénieur généraliste basée à Lille",
     description_en: "General engineering school based in Lille, France"

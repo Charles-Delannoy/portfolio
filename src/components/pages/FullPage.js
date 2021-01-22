@@ -21,8 +21,10 @@ const FullPage = ({ language, onLanguageClick }) => {
     let scrollValue = top;
     if (window.scrollY > scrollValue) {
       scrollValue = top + sectionHeight;
+      document.getElementById('contactdiv').classList.remove('contact-show')
     } else {
       scrollValue = top - sectionHeight;
+      document.getElementById('contactdiv').classList.remove('contact-show')
     }
 
     scrollValue = scrollValue < 0 ? 0 : scrollValue;
