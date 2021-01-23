@@ -3,6 +3,8 @@ import React, { Fragment } from 'react';
 import MainTitle from '../styled/MainTitle';
 import Wrapper from '../styled/Wrapper';
 import ToolsItems from './pagesComponents/ToolsItems';
+// Media Queries
+import { mediaQueries } from "../mediaQueries/MediaQueries"
 // External librairies
 import styled from 'styled-components';
 
@@ -31,7 +33,13 @@ const Section = styled.div`
       text-align: center;
       padding: 0 20px;
       margin: 0 auto;
+      ${mediaQueries('phone')`
+        font-size: 4vw;
+      `};
     }
+    ${mediaQueries('phone')`
+      top: -27%;
+    `};
   }
   .logos {
     position: relative;

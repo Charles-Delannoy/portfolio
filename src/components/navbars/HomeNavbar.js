@@ -100,6 +100,7 @@ const HomeNav = styled.div`
 const HomeNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener }) => {
 
   const goTo = (position) => {
+    document.getElementById('contactdiv').classList.remove('contact-show');
     stopFullPageListener(position);
   }
 

@@ -4,6 +4,8 @@ import MainTitle from '../styled/MainTitle';
 import Wrapper from '../styled/Wrapper';
 import ProjetItems from './pagesComponents/ProjetItems';
 import Carroussel from './pagesComponents/Carroussel';
+// Media Queries
+import { mediaQueries } from "../mediaQueries/MediaQueries"
 // External librairies
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -21,6 +23,11 @@ const Section = styled.div`
   width: 100%;
   height: 100%;
   padding: 0;
+  ${mediaQueries('phone')`
+    width: 80%;
+    height: 100%;
+    margin: 0 auto;
+  `};
 `;
 
 const Images = styled.div`
@@ -39,6 +46,9 @@ const Images = styled.div`
     max-width: 30%;
     height: 100%;
   }
+  ${mediaQueries('phone')`
+    height: 20%;
+  `};
 `;
 const Infos = styled.div`
   height: 100%;
@@ -54,6 +64,9 @@ const Infos = styled.div`
     position: absolute;
     z-index: 1000;
     top: 0;
+    ${mediaQueries('phone')`
+      display: none;
+    `};
   }
   .infos-description {
     position: absolute;
@@ -66,14 +79,26 @@ const Infos = styled.div`
       text-shadow: -1px 0 #f8f8f8, 0 1px #f8f8f8, 1px 0 #f8f8f8, 0 -1px #f8f8f8;
       font-family: 'Montserrat';
       font-weight: 400;
+      ${mediaQueries('phone')`
+        font-size: 25px;
+        text-align: center;
+      `};
     }
   }
+  ${mediaQueries('phone')`
+    width: 100%;
+  `};
+
 `;
 
 const InfosWrapper = styled.div`
   height 30%;
   width: 100%;
   display: flex;
+  ${mediaQueries('phone')`
+    flex-direction: column;
+    height 90%;
+  `};
 `;
 
 const Buttons = styled.div`
@@ -110,6 +135,9 @@ const Buttons = styled.div`
     color: #adb1b9;
     border: thin solid #adb1b9;
   }
+  ${mediaQueries('phone')`
+    width: 100%;
+  `};
 `;
 
 const Logos = styled.div`
@@ -118,6 +146,9 @@ margin-top: 25px;
     height: 25px;
     padding-right: 10px;
   }
+  ${mediaQueries('phone')`
+    text-align: center;
+  `};
 `;
 
 const Projet = ({ language, onLanguageClick }) => {

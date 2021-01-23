@@ -15,15 +15,26 @@ const FullPage = ({ language, onLanguageClick }) => {
 
   const [top, setTop] = useState(0);
   const [position, setPosition] = useState(window.scrollY)
+  const [sectionHeight, setSectionHeight] = useState(0);
+  const [pos, setPos] = useState(0);
 
   const scrollListen = (e) => {
-    const sectionHeight = document.body.clientHeight / 5;
+    if (sectionHeight === 0) {
+      setSectionHeight(document.body.clientHeight / 5);
+    };
+    const heightArray = [0, sectionHeight, 2*sectionHeight, 3*sectionHeight, 4*sectionHeight];
     let scrollValue = top;
     if (window.scrollY > scrollValue) {
-      scrollValue = top + sectionHeight;
+      const newPos = pos + 1;
+      setPos(newPos);
+      // console.log(newPos);
+      scrollValue = newPos * sectionHeight;
       document.getElementById('contactdiv').classList.remove('contact-show')
     } else {
-      scrollValue = top - sectionHeight;
+      const newPos = pos - 1;
+      setPos(newPos);
+      // console.log(newPos);
+      scrollValue = newPos * sectionHeight;
       document.getElementById('contactdiv').classList.remove('contact-show')
     }
 
@@ -50,13 +61,13 @@ const FullPage = ({ language, onLanguageClick }) => {
 
   useEffect(() => {
     fullPageScroll(top);
-  }, [top])
+  }, [top, sectionHeight])
 
 
   return (
     <Wrapper>
-      <GlobalNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener}/>
-      <Home language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener}/>
+      <GlobalNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener} setPos={setPos} />
+      <Home language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener} setPos={setPos} />
       <Apropos language={language} onLanguageClick={onLanguageClick}/>
       <Projet language={language}/>
       <Formations language={language}/>

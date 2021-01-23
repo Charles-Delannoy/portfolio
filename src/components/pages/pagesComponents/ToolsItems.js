@@ -1,5 +1,6 @@
 
 const tools = {
+  // LANGUAGES
   ruby: {
     label: 'Ruby',
     logo: 'ruby.png'
@@ -16,6 +17,7 @@ const tools = {
     label: 'CSS3',
     logo: 'css.png'
   },
+  // FRAMEWORKS
   rails: {
     label: 'Ruby on Rails',
     logo: 'rails.png'
@@ -32,6 +34,7 @@ const tools = {
     label: 'Semantic UI',
     logo: 'semantic.png'
   },
+  // BDD
   postgre: {
     label: 'PostgreSQL',
     logo: 'postgre.png'
@@ -40,6 +43,7 @@ const tools = {
     label: 'MySQL',
     logo: 'mysql.png'
   },
+  // HOSTING
   heroku: {
     label: 'Heroku',
     logo: 'heroku.png'
@@ -52,6 +56,7 @@ const tools = {
     label: 'NameCheap',
     logo: 'namecheap.png'
   },
+  // OTHERS
   figma: {
     label: 'Figma',
     logo: 'figma.png'

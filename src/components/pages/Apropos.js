@@ -13,7 +13,7 @@ const Content = styled.div`
   p {
     align-self: center;
     font-family: 'Montserrat';
-    font-size: 30px;
+    font-size: 2.4vw;
     line-height: 45px;
     margin-bottom: 150px;
     margin-right: 10vw;
@@ -58,7 +58,7 @@ const Content = styled.div`
 `;
 
 const ProfilePic = styled.img`
-  width: 45%;
+  width: 40%;
   align-self: flex-end;
   ${mediaQueries('tab')`
     align-self: flex-start;

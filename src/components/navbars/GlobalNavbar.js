@@ -104,12 +104,13 @@ const GlobalNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageL
 
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li key={index}><a onClick={() => goTo(item.position * sectionHeight)}>{label}</a></li>);
+    return (<li key={index + item.id}><a id={item.id} onClick={() => goTo(item.position * sectionHeight)}>{label}</a></li>);
   });
 
   let lastScrollValue = document.documentElement.scrollTop;
 
   const goTo = (position) => {
+    document.getElementById('contactdiv').classList.remove('contact-show');
     stopFullPageListener(position);
   }
 

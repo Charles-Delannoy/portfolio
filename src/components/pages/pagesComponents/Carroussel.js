@@ -8,6 +8,11 @@ import { mediaQueries } from "../../mediaQueries/MediaQueries"
     width: 90%;
     height: calc(100vh - 120px - 10%);
     padding: 0 5%;
+    ${mediaQueries('phone')`
+      padding: 0;
+      margin: 0 auto;
+      height: calc(100vh - 120px);
+    `};
   `;
 
   const CustomCarroussel = styled.div`
