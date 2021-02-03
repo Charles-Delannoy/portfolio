@@ -98,20 +98,21 @@ const Wrapper = styled.div`
   `};
 `;
 
-const GlobalNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener }) => {
+const GlobalNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener, setPos }) => {
 
   const sectionHeight = document.body.clientHeight / 5;
 
   const renderMenus = Items.map((item, index) => {
     const label = language === 'fr' ? item.label : item.label_en;
-    return (<li key={index + item.id}><a id={item.id} onClick={() => goTo(item.position * sectionHeight)}>{label}</a></li>);
+    return (<li key={index + item.id}><a id={item.id} onClick={() => goTo(item.position * sectionHeight, item.position)}>{label}</a></li>);
   });
 
   let lastScrollValue = document.documentElement.scrollTop;
 
-  const goTo = (position) => {
+  const goTo = (position, newPos) => {
     document.getElementById('contactdiv').classList.remove('contact-show');
     stopFullPageListener(position);
+    setPos(newPos);
   }
 
   const logoClick = () => {
@@ -139,7 +140,7 @@ const GlobalNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageL
   return (
     <Wrapper>
       <HomeNav className='dynamic-navbar'>
-        <a className='logo-link' onClick={() => goTo(0)}><img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/></a>
+        <a className='logo-link' onClick={() => goTo(0, 0)}><img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/></a>
         <NavUl>
           {renderMenus}
         </NavUl>

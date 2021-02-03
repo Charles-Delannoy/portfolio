@@ -13,8 +13,8 @@ const Content = styled.div`
   p {
     align-self: center;
     font-family: 'Montserrat';
-    font-size: 2.4vw;
-    line-height: 45px;
+    font-size: 1.8vw;
+    line-height: 4.5vh;
     margin-bottom: 150px;
     margin-right: 10vw;
     font-weight: 100;
@@ -62,6 +62,10 @@ const ProfilePic = styled.img`
   align-self: flex-end;
   ${mediaQueries('tab')`
     align-self: flex-start;
+  `};
+  ${mediaQueries('phone')`
+    position: relative;
+    bottom: 1px;
   `};
 `;
 

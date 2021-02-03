@@ -141,7 +141,7 @@ const Buttons = styled.div`
 `;
 
 const Logos = styled.div`
-margin-top: 25px;
+margin-top: 18px;
   img {
     height: 25px;
     padding-right: 10px;

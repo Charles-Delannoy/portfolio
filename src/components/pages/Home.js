@@ -96,7 +96,7 @@ const scrollDown = () => {
   window.scrollTo({ top: window.innerHeight + 1, behavior: 'smooth' });
 }
 
-const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener }) => {
+const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener, setPos }) => {
 
   const [fullHeight, setFullHeight] = useState(1000);
   const [rightPos, setRightPos] = useState(0);
@@ -121,7 +121,7 @@ const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener 
     <Fragment>
       <Contact language={language}/>
       <ContactBtn language={language} rightPos={rightPos}/>
-      <HomeNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener}/>
+      <HomeNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener} setPos={setPos} />
       <Wrapper>
         <ContentWrapper>
           <ImgContent/>
