@@ -137,6 +137,7 @@ const Buttons = styled.div`
   }
   ${mediaQueries('phone')`
     width: 100%;
+    padding: 0;
   `};
 `;
 

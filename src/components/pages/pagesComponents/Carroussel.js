@@ -49,11 +49,11 @@ import { mediaQueries } from "../../mediaQueries/MediaQueries"
     }
     .goback {
       right: 0%;
-      transition: right 300ms linear;
+      transition: right 300ms ;
     }
     .gonext {
       right: 200%;
-      transition: right 300ms linear;
+      transition: right 300ms ;
     }
   `;
 
