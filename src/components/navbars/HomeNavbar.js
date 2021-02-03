@@ -58,7 +58,7 @@ const HomeNav = styled.div`
   align-items: center;
   z-index: 1000;
   ul {
-    margin-right: 6vw;
+    margin-right: 1vw;
     li {
       padding: 0 2vw;
       font-family: 'Montserrat';
@@ -77,7 +77,7 @@ const HomeNav = styled.div`
     `};
   }
   img {
-    margin-left: 5vw;
+    margin-left: 2vw;
     height: 150px;
     border: 1px solid #fff;
     border-radius: 50%;

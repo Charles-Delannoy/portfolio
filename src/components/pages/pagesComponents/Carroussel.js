@@ -18,6 +18,7 @@ import { mediaQueries } from "../../mediaQueries/MediaQueries"
   const CustomCarroussel = styled.div`
     overflow: hidden;
     display: flex;
+    height: 100%;
     button {
       position: absolute;
       outline: none;

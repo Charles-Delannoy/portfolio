@@ -62,6 +62,8 @@ const ProfilePic = styled.img`
   align-self: flex-end;
   ${mediaQueries('tab')`
     align-self: flex-start;
+    height: 30%;
+    width: auto;
   `};
   ${mediaQueries('phone')`
     position: relative;

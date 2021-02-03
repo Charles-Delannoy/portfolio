@@ -32,7 +32,7 @@ const Section = styled.div`
 
 const Images = styled.div`
   width: 100%;
-  height: 70%;
+  height: 50vh;
   display: flex;
   justify-content: center;
   img {
