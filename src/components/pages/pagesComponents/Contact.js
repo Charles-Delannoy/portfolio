@@ -1,4 +1,6 @@
 import React from 'react';
+// Media Queries
+import { mediaQueries } from "../../mediaQueries/MediaQueries"
 // External librairies
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -68,6 +70,9 @@ const ContactDiv = styled.div`
       width: 40px;
     }
   }
+  ${mediaQueries('phone')`
+    display: none;
+  `};
 `;
 
 const Contact = ({ language }) => {

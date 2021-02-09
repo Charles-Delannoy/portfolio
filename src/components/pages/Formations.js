@@ -59,6 +59,9 @@ const Card = styled.div`
       }
     }
   }
+  ${mediaQueries('phone')`
+    width: 100%;
+  `};
 `;
 
 const Filter = styled.div`

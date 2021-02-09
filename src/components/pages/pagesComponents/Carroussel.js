@@ -36,6 +36,9 @@ import { mediaQueries } from "../../mediaQueries/MediaQueries"
       ${mediaQueries('tab')`
         top: 45%;
       `};
+      ${mediaQueries('phone')`
+        left: -2%;
+      `};
     }
     .next {
       right: 2%;
@@ -43,25 +46,28 @@ import { mediaQueries } from "../../mediaQueries/MediaQueries"
       ${mediaQueries('tab')`
         top: 45%;
       `};
+      ${mediaQueries('phone')`
+        right: -2%;
+      `};
       img {
         transform: rotate(180deg);
       }
     }
     .goback {
-      right: 0%;
+      right: 0vw;
       transition: right 300ms ;
     }
     .gonext {
-      right: 200%;
+      right: 200vw;
       transition: right 300ms ;
     }
   `;
 
   const TransitionContainer = styled.div`
     display: grid;
-    grid-template-columns: 100% 100% 100%;
+    grid-template-columns: 100vw 100vw 100vw;
     position: relative;
-    right: 100%;
+    right: 100vw;
   `;
 
 const Carroussel = ({items}) => {

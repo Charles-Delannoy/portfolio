@@ -34,6 +34,9 @@ const Section = styled.div`
       }
     }
   }
+  ${mediaQueries('tab')`
+    width: 100%;
+  `};
   .title {
     position: absolute;
     top: -20%;
@@ -61,6 +64,9 @@ const Section = styled.div`
       height: 100%;
       padding: 0 10px;
       transition: all ease-in-out .6s;
+      ${mediaQueries('tab')`
+        padding: 0 30%;
+      `};
     }
     .logo-description {
       display: none;
