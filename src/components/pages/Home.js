@@ -29,7 +29,7 @@ const ContentWrapper = styled.div`
     align-self: center;
     text-align: center;
     margin: 120px 30px 30px 30px;
-    color: #89c1da;
+    color: #14637b;
     ${mediaQueries('phone')`
       margin-top: auto;
       font-size: 30px;
@@ -100,6 +100,7 @@ const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener,
 
   const [fullHeight, setFullHeight] = useState(1000);
   const [rightPos, setRightPos] = useState(0);
+  const [color, setColor] = useState('#14637b');
 
   useEffect(() => {
     const newHeight = document.body.clientHeight;
@@ -110,8 +111,10 @@ const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener,
     let right = (window.scrollY + 3);
     if (right <= 270) {
       setRightPos(right);
+      setColor("#14637b")
     } else {
       setRightPos(270);
+      setColor("#86adb9")
     }
   };
 
@@ -120,7 +123,7 @@ const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener,
   return (
     <Fragment>
       <Contact language={language}/>
-      <ContactBtn language={language} rightPos={rightPos}/>
+      <ContactBtn language={language} rightPos={rightPos} color={color}/>
       <HomeNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener} setPos={setPos} />
       <Wrapper>
         <ContentWrapper>

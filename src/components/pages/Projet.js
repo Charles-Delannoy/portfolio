@@ -24,7 +24,7 @@ const Section = styled.div`
   height: 100%;
   padding: 0;
   ${mediaQueries('phone')`
-    width: 80%;
+    width: 90%;
     height: 100%;
     margin: 0 auto;
   `};
@@ -130,6 +130,9 @@ const Buttons = styled.div`
       color: #a8c3e2;
       border: thin solid #a8c3e2;
     }
+    ${mediaQueries('sPhone')`
+      display: none;
+    `};
   }
   .disable-git {
     color: #adb1b9;
@@ -138,6 +141,9 @@ const Buttons = styled.div`
   ${mediaQueries('phone')`
     width: 100%;
     padding: 0;
+  `};
+  ${mediaQueries('sPhone')`
+    padding-top: 45%;
   `};
 `;
 
@@ -149,6 +155,9 @@ margin-top: 18px;
   }
   ${mediaQueries('phone')`
     text-align: center;
+  `};
+  ${mediaQueries('mPhone')`
+    display: none;
   `};
 `;
 

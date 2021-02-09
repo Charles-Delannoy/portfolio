@@ -6,12 +6,10 @@ import styled from 'styled-components';
 
   const Button = styled.button`
     font-family: 'Montserrat';
-    font-size: 40px;
-    font-weight: 300;
-    color: #646a77;
-    background-color: #fff;
-    border: thin solid #c5c2c2;
-    border-right: none;
+    color: #fff;
+    background-color: ${props => `${props.color}`};
+    border-radius: 3px 0 0 3px;
+    border: none;
     padding: 25px 20px 25px 10px;
     display: flex;
     align-items: center;
@@ -23,6 +21,7 @@ import styled from 'styled-components';
     right: ${props => `-${props.rightpos}px`};
     z-index: 1005;
     outline: none;
+    transition: background-color ease 300ms;
     img {
       transform: scaleX(1);
       height: 40px;
@@ -30,12 +29,12 @@ import styled from 'styled-components';
     }
     p {
       margin: 0;
-      font-weight: 100;
+      font-weight: 300;
       font-size: 30px;
     }
     &:hover {
-      color: #6EB4D1;
-
+      background-color: #438dab;
+      transition: background-color ease 300ms;
     }
     ${mediaQueries('phone')`
       display: none;
@@ -43,14 +42,14 @@ import styled from 'styled-components';
   `;
 
 
-const ContactBtn = ({ language, rightPos }) => {
+const ContactBtn = ({ language, rightPos, color }) => {
 
 
 
   const text = language === 'fr' ? 'Contactez moi' : 'Contact me';
 
   return (
-    <Button onClick={() => document.getElementById('contactdiv').classList.add('contact-show')} rightpos={rightPos}><img src={process.env.PUBLIC_URL + '/arrow.png'} alt='arrow'/> <p>{text}</p></Button>
+    <Button onClick={() => document.getElementById('contactdiv').classList.add('contact-show')} rightpos={rightPos} color={color} ><img src={process.env.PUBLIC_URL + '/white-arrow.png'} alt='arrow'/> <p>{text}</p></Button>
   );
 };
 

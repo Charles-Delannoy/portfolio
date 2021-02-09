@@ -14,10 +14,10 @@ const Content = styled.div`
     align-self: center;
     font-family: 'Montserrat';
     font-size: 1.8vw;
-    line-height: 4.5vh;
+    line-height: 4.7vh;
     margin-bottom: 150px;
     margin-right: 10vw;
-    font-weight: 100;
+    font-weight: 200;
     border-left: thin solid #dce4e8;
     padding-left: 30px;
     ${mediaQueries('tab')`
@@ -37,13 +37,13 @@ const Content = styled.div`
   }
   strong {
     font-weight: 100;
-    background-image: linear-gradient(120deg,#edf2f4 0%,#edf2f4 0%);
+    background-image: linear-gradient(120deg,#e1f0f6 0%,#e1f0f6 0%);
     background-repeat: no-repeat;
     background-size: 100% 35%;
     background-position-x: 100%;
     background-position-y: 83%;
     padding: 10px;
-    color: #005b84;
+    color: #14637b;
     ${mediaQueries('phone')`
       background-size: 100% 20%;
       background-position-y: 68%;
