@@ -30,7 +30,7 @@ const ContactDiv = styled.div`
       font-weight: 400;
       margin: 0;
       font-size: 30px;
-      color: #fff;
+      color: #000;
     }
     img {
       height: 64px;
