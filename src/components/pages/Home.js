@@ -3,8 +3,10 @@ import React, { useState, useEffect, Fragment } from 'react';
 import { mediaQueries } from "../mediaQueries/MediaQueries"
 // My components
 import ContactBtn from '../buttons/ContactBtn';
+import PhoneContactBtn from '../buttons/PhoneContactBtn';
 import HomeNavbar from '../navbars/HomeNavbar';
 import Contact from './pagesComponents/Contact';
+import PhoneContact from './pagesComponents/PhoneContact';
 // External librairies
 import styled from 'styled-components';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -122,7 +124,9 @@ const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener,
 
   return (
     <Fragment>
+      <PhoneContactBtn language={language} />
       <Contact language={language}/>
+      <PhoneContact language={language}/>
       <ContactBtn language={language} rightPos={rightPos} color={color}/>
       <HomeNavbar language={language} onLanguageClick={onLanguageClick} fullPageScroll={fullPageScroll} stopFullPageListener={stopFullPageListener} setPos={setPos} />
       <Wrapper>
