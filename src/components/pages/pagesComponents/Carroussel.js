@@ -37,7 +37,8 @@ import { mediaQueries } from "../../mediaQueries/MediaQueries"
         top: 45%;
       `};
       ${mediaQueries('phone')`
-        left: -2%;
+        left: 0%;
+        padding: 1%;
       `};
     }
     .next {
@@ -47,7 +48,8 @@ import { mediaQueries } from "../../mediaQueries/MediaQueries"
         top: 45%;
       `};
       ${mediaQueries('phone')`
-        right: -2%;
+        right: 0%;
+        padding: 1%;
       `};
       img {
         transform: rotate(180deg);
