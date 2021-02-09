@@ -7,6 +7,7 @@ import { fab, faLinkedin } from '@fortawesome/free-brands-svg-icons';
 
 const ContactDiv = styled.div`
   box-shadow: 0px 0px 30px -19px rgba(0,0,0,0.75);
+  width: 400px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
@@ -26,6 +27,7 @@ const ContactDiv = styled.div`
     h2 {
       font-weight: 300;
       margin: 0;
+      font-size: 30px;
     }
     img {
       height: 64px;
@@ -42,6 +44,10 @@ const ContactDiv = styled.div`
     align-items: center;
     font-size: 25px;
     margin-top: 0;
+    letter-spacing: 4px;
+    svg {
+      height: 30px;
+    }
   }
   .icon {
     font-size: 35px;

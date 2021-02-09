@@ -15,12 +15,25 @@ const Content = styled.div`
 
 const Section = styled.div`
   height: 15%;
+  width: 70%;
+  margin: 0 auto;
   margin-bottom: 25px;
   position: relative;
   border: thin solid #dce4e8;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: all ease-in-out .6s;
+  &:hover {
+    width: 100%;
+    transition: all ease-in-out .6s;
+    .logos {
+      img {
+        padding: 0 30%;
+        transition: all ease-in-out .6s;
+      }
+    }
+  }
   .title {
     position: absolute;
     top: -20%;
@@ -46,7 +59,8 @@ const Section = styled.div`
     height: 50%;
     img {
       height: 100%;
-      padding: 0 10px
+      padding: 0 10px;
+      transition: all ease-in-out .6s;
     }
     .logo-description {
       display: none;
@@ -70,7 +84,7 @@ const Section = styled.div`
         width: 20px;
         position: absolute;
         bottom:-8px;
-        left: calc(50% - 20px);
+        left: 15%;
       }
     }
     &:hover {

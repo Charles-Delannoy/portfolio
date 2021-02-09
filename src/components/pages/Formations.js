@@ -27,13 +27,15 @@ const Content = styled.div`
 
 const Card = styled.div`
   background-position-y: 20%;
-  width: 100%;
+  width: 70%;
+  margin: 0 auto;
   height: 22%;
   background-size: cover;
   position: relative;
   transition: all ease-in-out .6s;
   &:hover {
-    transform: scale(1.1);
+    width: 100%;
+    transform: scale(1.05);
     transition: all ease-in-out .6s;
     .frame {
       margin: 0 2%;

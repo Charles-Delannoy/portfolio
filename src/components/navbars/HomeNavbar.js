@@ -79,7 +79,7 @@ const HomeNav = styled.div`
   img {
     margin-left: 2vw;
     height: 150px;
-    border: 1px solid #fff;
+
     border-radius: 50%;
     transition: all 25s ease-out;
     &:hover {
