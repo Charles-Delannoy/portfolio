@@ -133,9 +133,9 @@ const Home = ({ language, onLanguageClick, fullPageScroll, stopFullPageListener,
         <ContentWrapper>
           <ImgContent/>
           <FlexDescription>
-            <p className='text'>
+            <h1 className='text'>
               <strong>Charles DELANNOY</strong> <br/>{text}
-            </p>
+            </h1>
 
             <BottomArrow>
               <img src={process.env.PUBLIC_URL + '/arrow.png'} alt='arrow' onClick={scrollDown}/>

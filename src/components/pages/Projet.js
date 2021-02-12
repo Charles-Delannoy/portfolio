@@ -172,14 +172,19 @@ const Projet = ({ language, onLanguageClick }) => {
     const visit = language === 'fr' ? "Accèder au site" : "Access Website";
     const repo = language === 'fr' ? "Accèder au repo" : "Access Repository";
     const privateRepo = language === 'fr' ? "Ce repo est privé" : "This repository is private";
+    const onGoingWebsite = language === 'fr' ? "En cours de développement" : "Development in progress";
 
     const description = descriptionLanguage.map((paragraph) => {
       return (<p key={item.id + paragraph}>{paragraph}</p>);
     });
 
     const logos = item.tools.map((item) => {
-      return (<img src={process.env.PUBLIC_URL + `/${item}`} alt={item}/>)
+      return (<img key={item} src={process.env.PUBLIC_URL + `/${item}`} alt={item}/>)
     })
+
+    const SiteLink = item.link === 'ongoing' ?
+      <div className='disable-git'><FontAwesomeIcon icon={faLink} /> {onGoingWebsite}</div> :
+      <a className='site-btn' href={item.link} target='_blank'><FontAwesomeIcon icon={faLink} /> {visit}</a>
 
     const Github = item.github === 'Private' ?
       <div className='disable-git'><FontAwesomeIcon icon={faGithub} /> {privateRepo}</div> :
@@ -201,7 +206,7 @@ const Projet = ({ language, onLanguageClick }) => {
             </div>
           </Infos>
           <Buttons>
-            <a className='site-btn' href={item.link} target='_blank'><FontAwesomeIcon icon={faLink} /> {visit}</a>
+            {SiteLink}
             {Github}
           </Buttons>
         </InfosWrapper>

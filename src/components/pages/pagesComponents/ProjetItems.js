@@ -41,6 +41,20 @@ const ProjetItems = [
     screen: 'PF-screen.png',
     desktop: 'PF-desktop.png'
   },
+  {
+    id: 3,
+    label: 'TWI',
+    link: 'ongoing',
+    github: 'https://github.com/Charles-Delannoy/TeamWorkInteract',
+    description: ["EN COURS : Outil d'évaluation de la dynamique d'équipes projets.",
+                  "Site web permettant de gérer des groupes projets, d'y inviter des participants et de leur soumettre des questionnaires personalisés afin d'évaluer leur cohésion et de proposer des actions correctives."],
+    description_en: ['IN PROGRESS: Evaluation tool for the dynamic of project teams',
+                     "Website allowing to manage project groups, invite participants and submit personalized surveys in order to evaluate their cohesion and suggest corrective actions."],
+    tools: ['rails.png', 'JS.png', 'postgre.png', 'html.png', 'css.png'],
+    back: null,
+    screen: 'TWI-screen.png',
+    desktop: 'TWI-desktop.png'
+  }
 ];
 
 export default ProjetItems;

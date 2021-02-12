@@ -109,7 +109,7 @@ const Outils = ({ language, onLanguageClick }) => {
 
     const logos = section.logos.map((item) => {
       return (
-        <div className='logos'>
+        <div key={item.id} className='logos'>
           <img src={process.env.PUBLIC_URL + `/${item.logo}`} alt={item.label}/>
           <div className='logo-description'>
             <p>{item.label}</p>
@@ -122,7 +122,7 @@ const Outils = ({ language, onLanguageClick }) => {
     const title = language === 'fr' ? section.label : section.label_en;
 
     return (
-      <Section>
+      <Section key={section.id}>
         <div className='title'><h2>{title}</h2></div>
         {logos}
       </Section>

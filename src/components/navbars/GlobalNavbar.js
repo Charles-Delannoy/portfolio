@@ -140,7 +140,7 @@ const GlobalNavbar = ({ language, onLanguageClick, fullPageScroll, stopFullPageL
   return (
     <Wrapper>
       <HomeNav className='dynamic-navbar'>
-        <a className='logo-link' onClick={() => goTo(0, 0)}><img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/></a>
+        <a className='logo-link' id='top-logo' onClick={() => goTo(0, 0)}><img src={process.env.PUBLIC_URL + '/light-logo.png'} alt='logo'/></a>
         <NavUl>
           {renderMenus}
         </NavUl>

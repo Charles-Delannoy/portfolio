@@ -18,19 +18,24 @@ const FullPage = ({ language, onLanguageClick }) => {
   const [sectionHeight, setSectionHeight] = useState(0);
   const [pos, setPos] = useState(0);
 
+  const btnIds = ['top-logo', 'about', 'project', 'education', 'tools']
+
   const scrollListen = (e) => {
     if (sectionHeight === 0) {
       setSectionHeight(document.body.clientHeight / 5);
     };
-    const heightArray = [0, sectionHeight, 2*sectionHeight, 3*sectionHeight, 4*sectionHeight];
+    // const heightArray = [0, sectionHeight, 2*sectionHeight, 3*sectionHeight, 4*sectionHeight];
     let scrollValue = top;
+    let way = 0;
     if (window.scrollY > scrollValue) {
+      way = 1
       const newPos = pos + 1;
       setPos(newPos);
       // console.log(newPos);
       scrollValue = newPos * sectionHeight;
       document.getElementById('contactdiv').classList.remove('contact-show')
     } else {
+      way = -1
       const newPos = pos - 1;
       setPos(newPos);
       // console.log(newPos);
@@ -41,26 +46,31 @@ const FullPage = ({ language, onLanguageClick }) => {
     scrollValue = scrollValue < 0 ? 0 : scrollValue;
 
     if (scrollValue >= 0 && scrollValue <= document.body.clientHeight) {
-      stopFullPageListener(scrollValue)
+      const btnIndex = pos + way;
+      stopFullPageListener(scrollValue, btnIndex);
     }
   }
 
-  const stopFullPageListener = (scrollValue) => {
+  const stopFullPageListener = (scrollValue, btnIndex = null) => {
     document.removeEventListener('scroll', scrollListen);
     window.scrollTo({ top: scrollValue, behavior: 'smooth' });
+    if (btnIndex != null) {
+      console.log(btnIndex);
+      document.getElementById(btnIds[btnIndex]).click();
+    }
     setTimeout(() => setTop(scrollValue), 1000);
   }
 
-  const fullPageScroll = (top) => {
+  const fullPageScroll = () => {
     document.addEventListener("scroll", scrollListen);
   };
 
   useEffect(() => {
-    fullPageScroll(top);
+    fullPageScroll();
   }, [])
 
   useEffect(() => {
-    fullPageScroll(top);
+    fullPageScroll();
   }, [top, sectionHeight])
 
 

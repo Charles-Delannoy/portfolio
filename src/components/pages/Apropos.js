@@ -95,14 +95,14 @@ const Apropos = ({ language, onLanguageClick }) => {
       Tout d'abord dans le secteur de la <strong>production énergétique</strong> je me suis par la suite dirigé vers <strong>l'automobile</strong> notamment dans le <strong>Marketing Digital</strong>.
       <br/>
       <br/>
-      Après 5 ans j'ai décidé de revenir à mes premiers amours et de reprendre le <strong>développement web</strong> en autodidacte et avec la formation <strong>Le Wagon</strong>.
+      Après 5 ans j'ai décidé de revenir à mes premiers amours et de reprendre le <strong>développement web</strong> en autodidacte puis avec la formation <strong>Le Wagon</strong>.
     </p> :
     <p>
       Trained as a <strong>general engineer</strong>, I became an <strong>Organization and Management consultant</strong> in 2015. <br/>
       At first I worked for the <strong>electricity production sector</strong>, then I moved to the <strong>automotive industry</strong> particularly in <strong>Digital Marketing</strong>.
       <br/>
       <br/>
-      After 5 years I decided to return to my first love by going back to <strong>web development</strong> as self-taught and with the training <strong>Le Wagon</strong>.
+      After 5 years I decided to return to my first love by going back to <strong>web development</strong> as self-taught and then with <strong>Le Wagon</strong> bootcamp.
     </p>
 
   return (
