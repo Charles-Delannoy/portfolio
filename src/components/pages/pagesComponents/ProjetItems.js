@@ -2,7 +2,7 @@ const ProjetItems = [
   {
     id: 1,
     label: 'Millesime Manager',
-    link: 'https://www.millesime-manager.com/',
+    link: 'http://www.millesime-manager.com/',
     github: 'https://github.com/Charles-Delannoy/Millesime-manager',
     description: ["Projet de fin de batch pour la formation Le Wagon.",
                   "Millesime Manager est une application (PWA: Progressive Web App) de gestion de cave à vin. L'atout de cette application est l'indication de la date d'apogée permettant de boire son vin au bon moment pour en apprécier tous ses arômes."],
