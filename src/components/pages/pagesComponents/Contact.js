@@ -94,7 +94,7 @@ const Contact = ({ language }) => {
       <a href='mailto:charles.delannoy@hei.fr'>
         <h2><FontAwesomeIcon className='icon' icon={faEnvelopeSquare} /> charles.delannoy@hei.fr</h2>
       </a>
-      <a href='https://www.linkedin.com/in/charles-delannoy-20b16972/' target='_blank'>
+      <a href='https://www.linkedin.com/in/charles-delannoy/' target='_blank'>
         <h2><FontAwesomeIcon className='icon' icon={faLinkedin} /> {linkedin}</h2>
       </a>
     </ContactDiv>
