@@ -1,4 +1,4 @@
-import React, { useState, useEffect, Fragment } from 'react';
+import React, { useState, useEffect } from 'react';
 import GlobalNavbar from '../navbars/GlobalNavbar';
 import Home from './Home';
 import Apropos from './Apropos';
@@ -14,7 +14,7 @@ const Wrapper = styled.div`
 const FullPage = ({ language, onLanguageClick }) => {
 
   const [top, setTop] = useState(0);
-  const [position, setPosition] = useState(window.scrollY)
+  // const [position, setPosition] = useState(window.scrollY)
   const [sectionHeight, setSectionHeight] = useState(0);
   const [pos, setPos] = useState(0);
 
@@ -54,7 +54,7 @@ const FullPage = ({ language, onLanguageClick }) => {
   const stopFullPageListener = (scrollValue, btnIndex = null) => {
     document.removeEventListener('scroll', scrollListen);
     window.scrollTo({ top: scrollValue, behavior: 'smooth' });
-    if (btnIndex != null) {
+    if (btnIndex != null && btnIndex >= 0 && btnIndex <= 4) {
       console.log(btnIndex);
       document.getElementById(btnIds[btnIndex]).click();
     }
