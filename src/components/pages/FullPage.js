@@ -53,10 +53,10 @@ const FullPage = ({ language, onLanguageClick }) => {
 
   const stopFullPageListener = (scrollValue, btnIndex = null) => {
     document.removeEventListener('scroll', scrollListen);
-    window.scrollTo({ top: scrollValue, behavior: 'smooth' });
     if (btnIndex != null && btnIndex >= 0 && btnIndex <= 4) {
-      console.log(btnIndex);
       document.getElementById(btnIds[btnIndex]).click();
+    } else {
+      window.scrollTo({ top: scrollValue, behavior: 'smooth' });
     }
     setTimeout(() => setTop(scrollValue), 1000);
   }

@@ -89,6 +89,16 @@ const tools = {
     id: 'tool-17',
     label: 'Google Fonts',
     logo: 'gfonts.png'
+  },
+  stimulus: {
+    id: 'tool-18',
+    label: 'Stimulus',
+    logo: 'stimulus.png'
+  },
+  redis: {
+    id: 'tool-19',
+    label: 'Redis',
+    logo: 'redis.png'
   }
 }
 
@@ -103,13 +113,13 @@ const ToolsItems = [
     id: 2,
     label: 'Frameworks / Librairies front',
     label_en: 'Frameworks / Front librairies',
-    logos: [tools['rails'], tools['react'], tools['bootsrap'], tools['semantic']]
+    logos: [tools['rails'], tools['stimulus'], tools['react'], tools['bootsrap'], tools['semantic']]
   },
   {
     id: 3,
     label: 'Bases de données',
     label_en: 'Database',
-    logos: [tools['postgre'], tools['mysql']]
+    logos: [tools['postgre'], tools['mysql'], tools['redis']]
   },
   {
     id: 4,
