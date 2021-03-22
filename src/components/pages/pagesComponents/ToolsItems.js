@@ -111,9 +111,9 @@ const ToolsItems = [
   },
   {
     id: 2,
-    label: 'Frameworks / Librairies front',
+    label: 'Frameworks',
     label_en: 'Frameworks / Front librairies',
-    logos: [tools['rails'], tools['stimulus'], tools['react'], tools['bootsrap'], tools['semantic']]
+    logos: [tools['rails'], tools['stimulus'], tools['react']]
   },
   {
     id: 3,
