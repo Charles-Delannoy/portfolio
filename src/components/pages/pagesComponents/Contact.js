@@ -19,7 +19,7 @@ const ContactDiv = styled.div`
   border: thin solid #c5c2c2;
   background-color: #f8f8f8;
   z-index: 1010;
-  top: 64vh;
+  top: calc(90vh - 285px);
   right: -100%;
   padding: 25px;
   transition: all ease-in-out .8s;
