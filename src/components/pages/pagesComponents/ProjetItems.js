@@ -30,7 +30,7 @@ const ProjetItems = [
   {
     id: 3,
     label: 'TWI',
-    link: 'ongoing',
+    link: 'http://www.teamworkinteract.com/',
     github: 'https://github.com/Charles-Delannoy/TeamWorkInteract',
     description: ["EN COURS : Outil d'évaluation de la dynamique d'équipes projets.",
                   "Site web permettant de gérer des groupes projets, d'y inviter des participants et de leur soumettre des questionnaires personalisés afin d'évaluer leur cohésion et de proposer des actions correctives."],
